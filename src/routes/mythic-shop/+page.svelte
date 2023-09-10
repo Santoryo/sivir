@@ -1,0 +1,38 @@
+<script>
+    // @ts-nocheck
+
+        import Skin from '$lib/SkinCard/Skin.svelte';
+        import moment from 'moment';
+    
+        export let data;
+    
+        const skins = data.data.mythic;
+
+        console.log(data.version)
+    
+    
+        const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
+    
+    </script>
+    
+    <div class="p-10 flex flex-col items-left lg:items-left">
+    
+        <div class="text-4xl font-bold uppercase w-fit">Current Mythic Shop
+            <div class="text-2xl font-semibold uppercase">
+                PATCH {data.version.version} — Ends {moment(data.version.date).fromNow()} 
+            </div>
+        </div>
+        <div class="text-2xl font-bold uppercase h-4"></div>
+        <div class="flex flex-row">
+            <div class="flex flex-row gap-3 flex-wrap justify-center">
+            {#each skins as skin}
+
+                <Skin skin={skin} />
+            
+                {/each}
+
+            </div>
+    
+        </div>
+    
+    </div>

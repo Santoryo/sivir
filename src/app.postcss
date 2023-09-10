@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
+
+
+.skincard {
+	-moz-box-shadow: inset 0 -100px 100px -100px #000000;
+    -webkit-box-shadow: inset 0 -100px 100px -100px #000000;
+    box-shadow: inset 0 -100px 100px -100px #000000;
+    cursor: pointer;
+}
+
+.skincardinfo {
+	text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+    @apply pb-2
+}
+
+.smooth
+{
+    @apply
+    transition-all duration-200 ease-linear;
+}
+
+
+.frame
+{
+    @apply h-44 w-44 lg:h-72 lg:w-72 bg-cover relative flex justify-center uppercase font-semibold skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white
+}
+
+.nav-icon
+{
+    filter: brightness(0) invert(1);
+    @apply h-4 w-4 bg-cover inline-block bg-center mr-2
+}
+
+.caroseul
+{
+    aspect-ratio: 16 / 9;
+    @apply bg-red-500 w-[588px] h-[388px]
+}
+
+.embla 
+{   
+    overflow: hidden;
+    @apply rounded-md
+}
+
+.embla__xd
+{
+    width: 120px;
+    @apply rounded-md bg-cover bg-center
+}
+
+.embla__container 
+{
+    aspect-ratio: 588 / 388;
+    display: flex;
+}
+
+.embla__slide 
+{    
+    flex: 0 0 100%;    
+    min-width: 0;  
+}
