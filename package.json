@@ -32,6 +32,7 @@
     "embla-carousel-autoplay": "^8.0.0-rc12",
     "embla-carousel-svelte": "^8.0.0-rc12",
     "moment": "^2.29.4",
+    "node-fetch": "^3.3.2",
     "svelte-carousel": "^1.0.25"
   }
 }
