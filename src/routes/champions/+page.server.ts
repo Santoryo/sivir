@@ -6,7 +6,7 @@ export async function load({ }) {
 
 async function init ()
 {
-    const res = await fetch('./champions.json', {method: "GET"})
+    const res = await fetch('https://api.brelshaza.com/v3/data/lol-champions', {method: "GET"})
     const data = await res.json();
     let champions = [];
 

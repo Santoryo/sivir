@@ -15,19 +15,8 @@ const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 
 onDestroy(() => {unsubscribe});
 
-
-function xd()
-{
-    $searchStore.search = "kai"
-    console.log("XD")
-}
-
 </script>
 
-
-<pre>{JSON.stringify($searchStore.filtered, null, 2)}</pre>
-
-<button on:click={xd}>HAHA</button>
 
 <div class="p-10 flex flex-col">
 
