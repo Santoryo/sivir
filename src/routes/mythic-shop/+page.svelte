@@ -24,7 +24,7 @@
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>
         <div class="flex flex-row">
-            <div class="flex flex-row gap-3 flex-wrap justify-center">
+            <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
             {#each skins as skin}
 
                 <Skin skin={skin} />
