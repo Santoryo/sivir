@@ -26,4 +26,10 @@
 
 </div>
 
+{:else if type == "skinline"}
+<div class='frame' style='background-image: url("{splash}{skin.splash}")'>
+    <span class="absolute bottom-0 skincardinfo text-sm text-center">{skin.name}
+
+</div>
+
 {/if}

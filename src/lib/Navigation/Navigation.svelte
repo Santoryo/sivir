@@ -17,7 +17,7 @@
         <li><a href="/sale-rotation" on:click={drawerClose}><i class='nav-icon' style='background-image: url("/lol/RP.webp")'></i> SALE ROTATION</a></li>
         <li><a href="/mythic-shop" on:click={drawerClose}><i class='nav-icon' style='background-image: url("/lol/ME.webp")'></i> MYTHIC SHOP</a></li>
         <li><a href="/champions" on:click={drawerClose}><i class='nav-icon' style='background-image: url("/champions.png")'></i> CHAMPIONS</a></li>
-        <li><a href="/skins" on:click={drawerClose}><i class='nav-icon' style='background-image: url("/skins.webp")'></i> SKINLINES</a></li>
+        <li><a href="/skinlines" on:click={drawerClose}><i class='nav-icon' style='background-image: url("/skins.webp")'></i> SKINLINES</a></li>
 
 	</ul>
 </nav>

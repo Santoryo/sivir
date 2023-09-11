@@ -34,12 +34,6 @@ let plugins = [Autoplay(autoplayOptions)]
 		{/each}
 		</div>
 	</div>
-		
-	<div class="card p-4">
-		<header class="card-header">(header)</header>
-		<section class="p-4">(content)</section>
-		<footer class="card-footer">(footer)</footer>
-	</div>
     
 </div>
 
