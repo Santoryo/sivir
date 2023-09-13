@@ -4,6 +4,7 @@
 import emblaCarouselSvelte from 'embla-carousel-svelte'
 import Autoplay from 'embla-carousel-autoplay'
 export let data;
+import Meta from '$lib/Meta.svelte';
 
 let emblaApi  
 let options = { loop: true }
@@ -20,10 +21,13 @@ let plugins = [Autoplay(autoplayOptions)]
 
 </script>
 
+<Meta titleSuffix="Home" description={`Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more.`} />
+
+
 <div class="p-10">
 
 	<div class="text-4xl font-bold uppercase">Welcome</div>
-	<div>Brelshaza.com - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more.</div>
+	<div>Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more.</div>
     <div class="text-2xl font-bold uppercase h-4"></div>
     <div class="flex flex-row">
 

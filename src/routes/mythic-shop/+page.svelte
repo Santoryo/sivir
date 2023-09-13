@@ -1,6 +1,7 @@
 <script>
     // @ts-nocheck
 
+        import Meta from '$lib/Meta.svelte';
         import Skin from '$lib/SkinCard/Skin.svelte';
         import moment from 'moment';
     
@@ -14,6 +15,8 @@
         const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
     
     </script>
+
+    <Meta titleSuffix="Mythic Shop Rotation" description={"Mythic Shop Rotation for Patch " + data.version.version} />
     
     <div class="p-10 flex flex-col items-left lg:items-left">
     

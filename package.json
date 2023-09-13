@@ -36,6 +36,8 @@
     "embla-carousel-svelte": "^8.0.0-rc12",
     "moment": "^2.29.4",
     "node-fetch": "^3.3.2",
-    "svelte-carousel": "^1.0.25"
+    "pocketbase": "^0.18.0",
+    "svelte-carousel": "^1.0.25",
+    "twitter-api-v2": "^1.15.1"
   }
 }

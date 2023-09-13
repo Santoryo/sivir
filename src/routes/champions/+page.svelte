@@ -1,9 +1,11 @@
 <script lang="ts">
-
+// @ts-nocheck
 import SkinCard from '$lib/SkinCard/SkinCard.svelte';
 import { createSearchStore, searchHandler } from '$lib/stores/search';
 import moment from 'moment';
-  import { onDestroy } from 'svelte';
+import { onDestroy } from 'svelte';
+import { goto } from '$app/navigation'
+  import Meta from '$lib/Meta.svelte';
 
 export let data;
 
@@ -15,7 +17,12 @@ const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 
 onDestroy(() => {unsubscribe});
 
+
+
 </script>
+
+<Meta titleSuffix={"Champions"} description={`All League of Legends champions in the game. There are currently ` + data.champions.length + " champions."} />
+
 
 
 <div class="p-10 flex flex-col">
@@ -43,7 +50,7 @@ onDestroy(() => {unsubscribe});
         <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
         {#each $searchStore.filtered as champion}
 
-            <SkinCard skin={champion} type={"champion"} />
+            <div on:click={() => {goto(`/champions/${champion.name}`)}}><SkinCard skin={champion} type={"champion"} /></div>
         
         {/each}
 

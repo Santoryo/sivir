@@ -3,7 +3,8 @@
 import SkinCard from '$lib/SkinCard/SkinCard.svelte';
 import { createSearchStore, searchHandler } from '$lib/stores/search';
 import moment from 'moment';
-  import { onDestroy } from 'svelte';
+import { onDestroy } from 'svelte';
+import Meta from '$lib/Meta.svelte';
 
 export let data;
 
@@ -14,6 +15,8 @@ const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 onDestroy(() => {unsubscribe});
 
 </script>
+
+<Meta titleSuffix="Skinlines" description={"All skinlines in League of Legends. There is currently " + data.champions.length + "skinlines"} />
 
 
 <div class="p-10 flex flex-col">

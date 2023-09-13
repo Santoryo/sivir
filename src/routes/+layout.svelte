@@ -6,6 +6,8 @@
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte'
 	import { invalidate } from '$app/navigation'
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
+	import Loader from '$lib/Navigation/Loader.svelte'
 	initializeStores();
 
 	const drawerStore = getDrawerStore();
@@ -15,8 +17,16 @@
 	}
 
 
+	let loading = false;
+
+	beforeNavigate(() => loading = true);
+
+	afterNavigate(() => loading = false);
+
+
 
 </script>
+
 
 <!-- App Shell -->
 <Drawer><Navigation /></Drawer>
@@ -60,6 +70,21 @@
 	</svelte:fragment>
 
 
-	<!-- Page Route Content -->
+	{#if loading == true}
+
+		<Loader />
+
+	{:else}
+
 	<slot />
+
+	{/if}
+
+	<svelte:fragment slot="pageFooter">
+		<div class="p-3 opacity-50">
+			<p class="text-xs leading-[0.85rem] w-">© 2023 Sivir.GG. Sivir.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+
+		</div>
+	</svelte:fragment>
+	
 </AppShell>
