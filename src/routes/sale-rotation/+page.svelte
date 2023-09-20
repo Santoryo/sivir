@@ -30,7 +30,7 @@
             <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
             {#each skins as skin}
 
-                <SkinCard skin={skin} />
+                <a href='/skin/{skin.championId}0{skin.number.toLocaleString('en-US', {minimumIntegerDigits: 2})}'><SkinCard skin={skin} /></a>
             
                 {/each}
 

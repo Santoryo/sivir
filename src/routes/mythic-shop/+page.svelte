@@ -4,6 +4,7 @@
         import Meta from '$lib/Meta.svelte';
         import Skin from '$lib/SkinCard/Skin.svelte';
         import moment from 'moment';
+        
     
         export let data;
     
@@ -30,7 +31,11 @@
             <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
             {#each skins as skin}
 
+                {#if skin.type == "SKIN"}
+                <a href='/skin/{skin.championId}0{skin.number.toLocaleString('en-US', {minimumIntegerDigits: 2})}'><Skin skin={skin} /></a>
+                {:else}
                 <Skin skin={skin} />
+                {/if}
             
                 {/each}
 

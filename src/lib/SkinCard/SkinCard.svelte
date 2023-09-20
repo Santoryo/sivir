@@ -28,7 +28,7 @@
 
 {:else if type == "skinline"}
 <div class='frame' style='background-image: url("{splash}{skin.splash}")'>
-    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
+    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}</span>
 
 </div>
 
