@@ -10,7 +10,8 @@
         import { faHeart, faHeartCrack } from '@fortawesome/free-solid-svg-icons'
         import { Toast, getToastStore } from '@skeletonlabs/skeleton';
         import {pb, currentUser, getWishlist} from '$lib/pocketbase.js'
-        import { onMount } from 'svelte';
+        import { onDestroy, onMount } from 'svelte';
+    import { invalidateAll } from '$app/navigation';
 
         const toastStore = getToastStore();
     
@@ -35,6 +36,8 @@
 
             console.log(likeStatus)
         })
+
+        onDestroy(() => invalidateAll());
 
         async function assignSkinVariable()
         {
