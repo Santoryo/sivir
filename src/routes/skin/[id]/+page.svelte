@@ -6,10 +6,42 @@
         import Meta from '$lib/Meta.svelte';
         import Skin from '$lib/SkinCard/Skin.svelte';
         import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+        import Fa from 'svelte-fa/src/fa.svelte'
+        import { faHeart, faHeartCrack } from '@fortawesome/free-solid-svg-icons'
+        import { Toast, getToastStore } from '@skeletonlabs/skeleton';
+        import {pb, currentUser, getWishlist} from '$lib/pocketbase.js'
+        import { onMount } from 'svelte';
+
+        const toastStore = getToastStore();
     
         export let data;
+
+        let likeStatus = false;
     
         const info = data.skin.version;
+
+        let _skin = "";
+
+
+        onMount(async () => {
+            try {
+                await assignSkinVariable()
+                _skin ? likeStatus = true : likeStatus = false;
+            }
+            catch
+            {
+                likeStatus = false;
+            }
+
+            console.log(likeStatus)
+        })
+
+        async function assignSkinVariable()
+        {
+            const wishlist = await getWishlist();
+            _skin = wishlist.find(o => o.name == name(info.skin))
+
+        }
 
         function name(skins) {
         if(skins.formatName == skins.name)
@@ -38,6 +70,40 @@
             return res.slice(0, -2); 
 
         }
+
+        async function like()
+        {
+            if(likeStatus == false)
+            {
+                console.log("adding skin")
+
+                const data = {
+                    name: name(info.skin),
+                    skinData: info.skin,
+                    user: $currentUser.id
+                }
+
+                await pb.collection('skins').create(data);
+                likeStatus = !likeStatus;
+                await assignSkinVariable();
+            }
+
+            else
+            {
+                await assignSkinVariable();
+                await pb.collection('skins').delete(_skin.id)
+                likeStatus = !likeStatus;
+            }
+
+            const t = {
+            message: likeStatus ? `<b>${name(info.skin)}</b> has been added to your wishlist!` : `<b>${name(info.skin)}</b> has been removed from your wishlist!`,
+            background: likeStatus ? 'variant-filled-success' : 'variant-filled-error'
+            };
+
+            toastStore.trigger(t);
+            
+        }
+
     
         const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
 
@@ -45,6 +111,8 @@
     </script>
 
     <Meta titleSuffix={name(info.skin)} description={`${info.lore}`} />
+
+    <Toast></Toast>
     
     <div class="p-10 flex flex-row gap-3 flex-wrap justify-left items-start">
     
@@ -103,7 +171,7 @@
 
         <div class="text-2xl font-bold uppercase w-[350px] pt-2">
             Sale Occurrences
-            <div class="w-full h-12 text-base font-semibold flex flex-col gap-1 overflow-y">
+            <div class="w-full h-24 text-base font-semibold flex flex-col gap-1 overflow-y-auto">
                 {#if info.res.length > 0}
                 <div class="h-5 w-full flex flex-row p-1"><div class="w-1/2">Date</div><div class="w-1/2">Time since</div></div>
                 {#each info.res as sale}
@@ -112,6 +180,17 @@
                 {:else}
                 <div class="h-5 w-full flex flex-row italic text-sm">This skin wasn't in sale / mythic shop yet.</div>
                 {/if}
+            </div>
+            <div class="mt-3">
+                <!-- svelte-ignore a11y-no-static-element-interactions -->
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <span class="chip variant-soft hover:variant-filled w-full px-4 py-2 text-sm" on:click={like}>
+                    {#if likeStatus == false}
+                    <Fa icon={faHeart} /><span>Add to Wishlist</span>
+                    {:else}
+                    <Fa icon={faHeartCrack} /><span>Remove from Wishlist</span>
+                    {/if}
+                </span>
             </div>
         </div>
 

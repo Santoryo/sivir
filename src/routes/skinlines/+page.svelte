@@ -44,7 +44,7 @@ onDestroy(() => {unsubscribe});
         <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
         {#each $searchStore.filtered as champion}
 
-            <SkinCard skin={champion} type={"skinline"} />
+        <a href="/skinlines/{champion.championId}"><SkinCard skin={champion} type={"skinline"} /></a>
         
         {/each}
 

@@ -32,4 +32,10 @@
 
 </div>
 
+{:else if type == "skinlineone"}
+<div class='frame' style='background-image: url("{splash}{skin.tilePath.replace("/lol-game-data/assets/v1/champion-tiles/", "")}")'>
+    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}</span>
+
+</div>
+
 {/if}

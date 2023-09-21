@@ -26,6 +26,8 @@
   },
   "type": "module",
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@supabase/auth-helpers-sveltekit": "^0.10.2",
     "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/auth-ui-svelte": "^0.2.4",
@@ -35,11 +37,13 @@
     "assert": "^2.1.0",
     "embla-carousel-autoplay": "^8.0.0-rc12",
     "embla-carousel-svelte": "^8.0.0-rc12",
+    "fontawesome-free": "^1.0.4",
     "moment": "^2.29.4",
     "mongodb": "^6.1.0",
     "node-fetch": "^3.3.2",
     "pocketbase": "^0.18.0",
     "svelte-carousel": "^1.0.25",
+    "svelte-fa": "^3.0.4",
     "twitter-api-v2": "^1.15.1"
   }
 }
