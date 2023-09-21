@@ -187,13 +187,20 @@
             <div class="mt-3">
                 <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <span class="chip variant-soft hover:variant-filled w-full px-4 py-2 text-sm" on:click={like}>
+                    {#if $currentUser}
+                    <span class="chip variant-soft hover:variant-filled w-full px-4 py-2 text-sm" on:click={like}>
                     {#if likeStatus == false}
                     <Fa icon={faHeart} /><span>Add to Wishlist</span>
                     {:else}
                     <Fa icon={faHeartCrack} /><span>Remove from Wishlist</span>
                     {/if}
-                </span>
+                    </span>
+                    {:else}
+                    <span class="chip variant-soft hover:variant-filled w-full px-2 py-2 text-sm">
+                    <a href="/account"><span>Sign In to wishlist</span></a>
+                    </span>
+                    {/if}
+
             </div>
         </div>
 
