@@ -7,7 +7,7 @@
 	import moment from 'moment';
 	import { Avatar } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	import { invalidateAll, onNavigate } from '$app/navigation';
+	import { goto, invalidateAll, onNavigate } from '$app/navigation';
 
 	let resultList;
 
@@ -23,7 +23,7 @@
 
 	async function login()
 	{
-		await pb.collection('users').authWithOAuth2({provider: 'discord', scopes: ['identify']});
+		await pb.collection('users').authWithOAuth2({provider: 'discord'})
 
 	}
 
@@ -77,7 +77,10 @@
 		</ul>
 	</section>
 
-	<button on:click={logout} type="button" class="btn variant-filled-primary w-28">Sign Out</button>
+	<div class="flex flex-row gap-2">
+		<button on:click={logout} type="button" class="btn variant-filled-primary w-28">Sign Out</button>
+		<a href="https://ko-fi.com/santoryo" target="_blank"><button type="button" class="btn variant-filled-secondary w-fit"><Icon icon={"kofi"} size={"30"} /> <span>Support project on Ko-Fi</span></button></a>
+	</div>
 </div>
 
 {:else}
@@ -85,6 +88,7 @@
 <div class="p-10 flex flex-col gap-3 flex-wrap justify-center items-center text-center">
 	<div class="text-2xl font-semibold">Login with your Discord account to keep track of your wishlist and edit it any time via the site</div>
 	<div><button on:click={login} type="button" class="btn bg-[#5865F2]"><Icon icon={"discord"} /><span>Login with Discord</span></button></div>
+	
 </div>
 
 
