@@ -31,7 +31,7 @@ let plugins = [Autoplay(autoplayOptions)]
 
 	<div class="text-4xl font-bold uppercase">Welcome</div>
 	<div class="text-2xl font-semibold uppercase">
-		Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more
+		Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more 
 	</div>
 	<div class="text-2xl font-bold uppercase h-4"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
