@@ -6,7 +6,7 @@
 
 html,
 body {
-  @apply h-full overflow-hidden;
+  @apply h-full overflow-hidden smooth scroll-smooth;
 }
 
 .skincard {
@@ -29,9 +29,17 @@ body {
   @apply h-32 w-32 lg:h-72 lg:w-72 bg-cover relative flex justify-center uppercase font-semibold skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white hover:scale-105;
 }
 
-.nav-icon {
+.dark-mode {
   filter: brightness(0) invert(1);
-  @apply h-4 w-4 bg-cover inline-block bg-center mr-2;
+}
+
+.light-mode {
+  filter: brightness(0) invert(0);
+}
+
+.nav-icon {
+  filter: brightness(0);
+  @apply h-4 w-4 bg-cover inline-block bg-center mr-2 dark:invert dark:brightness-0 smooth;
 }
 
 .caroseul {

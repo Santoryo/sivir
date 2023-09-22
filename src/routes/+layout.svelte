@@ -9,8 +9,10 @@
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import Loader from '$lib/Navigation/Loader.svelte'
 	import { isLoading } from '$lib/loading';
+	import {fade} from 'svelte/transition'
 	initializeStores();
 
+	export let data;
 
 	
 	const drawerStore = getDrawerStore();
@@ -64,22 +66,21 @@
 		<Navigation />
 	</svelte:fragment>
 
-
-	{#if $isLoading == true}
-
-		<Loader />
-
-	{:else}
-
 	<slot />
 
-	{/if}
 
 	<svelte:fragment slot="pageFooter">
-		<div class="p-3 opacity-50 w-3/4">
+
+	<div class="flex flex-col gap-0 text-center justify-center">
+		<div class="opacity-50 w-full flex flex-row gap-2 justify-center align-middle text-sm">
+			<a href="/policies/privacy-policy">Privacy Policy</a> <a href="/policies/terms-of-use">Terms of Use</a>
+		</div>
+		<div class="p-3 opacity-50 w-full">
 			<p class="text-xs leading-[0.85rem] w-">© 2023 Sivir.GG. Sivir.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
 
 		</div>
+
+	</div>
 	</svelte:fragment>
 	
 </AppShell>
