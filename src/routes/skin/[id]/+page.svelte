@@ -107,7 +107,7 @@
     
     </script>
 
-    <Meta titleSuffix={name(info.skin)} description={`${info.skin.lore}`} />
+    <Meta titleSuffix={name(info.skin)} description={`All the informations about ${name(info.skin)}`} />
 
     <Toast></Toast>
     
