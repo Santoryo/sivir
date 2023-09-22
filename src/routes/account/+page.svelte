@@ -5,16 +5,15 @@
 	import Icon from '$lib/Icon.svelte'
 	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import moment from 'moment';
-
 	import { Avatar } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	export let data
-
-	const toastStore = getToastStore()
+	import { invalidateAll, onNavigate } from '$app/navigation';
 
 	let resultList;
 
 	let skins: any = [];
+
+	const toastStore = getToastStore();
 
 	onMount(async () => {
 		skins = await getWishlist();
@@ -43,7 +42,6 @@
         toastStore.trigger(t);
         skins = await getWishlist();
     }
-
 
 </script>
 

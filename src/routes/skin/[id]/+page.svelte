@@ -1,17 +1,15 @@
 <script lang='ts'>
-    // @ts-nocheck
 
-        import SkinCard from '$lib/SkinCard/SkinCard.svelte';
         import moment from 'moment';
         import Meta from '$lib/Meta.svelte';
-        import Skin from '$lib/SkinCard/Skin.svelte';
         import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
         import Fa from 'svelte-fa/src/fa.svelte'
         import { faHeart, faHeartCrack } from '@fortawesome/free-solid-svg-icons'
         import { Toast, getToastStore } from '@skeletonlabs/skeleton';
         import {pb, currentUser, getWishlist} from '$lib/pocketbase.js'
         import { onDestroy, onMount } from 'svelte';
-    import { invalidateAll } from '$app/navigation';
+        import { invalidateAll } from '$app/navigation';
+        import name from '$lib/skinName.js';
 
         const toastStore = getToastStore();
     
@@ -21,10 +19,11 @@
     
         const info = data.skin.version;
 
-        let _skin = "";
+        let _skin: any;
 
 
         onMount(async () => {
+            invalidateAll();
             try {
                 await assignSkinVariable()
                 _skin ? likeStatus = true : likeStatus = false;
@@ -37,34 +36,29 @@
             console.log(likeStatus)
         })
 
-        onDestroy(() => invalidateAll());
+
+        onDestroy(() => {
+            invalidateAll();
+            toastStore.clear();
+        });
+        
+
 
         async function assignSkinVariable()
         {
             const wishlist = await getWishlist();
-            _skin = wishlist.find(o => o.name == name(info.skin))
+            _skin = wishlist.find((o: { name: any; }) => o.name == name(info.skin))
 
         }
 
-        function name(skins) {
-        if(skins.formatName == skins.name)
-        {
-            return skins.formatName + " " + skins.championName
-        }
-        else
-        {
-            return skins.formatName
-        }
-    }
-
-        function timestamp(_id)
+        function timestamp(_id: { toString: () => string; })
         {
             const ts = _id.toString().substring(0,8)
             const date = new Date( parseInt( ts, 16 ) * 1000 )
             return date
         }
 
-        function eachString(array)
+        function eachString(array: any[])
         {
             let res = "";
             array.forEach(element => {
@@ -83,7 +77,7 @@
                 const data = {
                     name: name(info.skin),
                     skinData: info.skin,
-                    user: $currentUser.id
+                    user: $currentUser?.id
                 }
 
                 await pb.collection('skins').create(data);

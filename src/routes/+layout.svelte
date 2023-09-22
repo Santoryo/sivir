@@ -4,24 +4,20 @@
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 	import { initializeStores, Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte'
-	import { invalidate } from '$app/navigation'
+	import { afterUpdate, beforeUpdate, onMount } from 'svelte'
+	import { invalidate, invalidateAll, onNavigate } from '$app/navigation'
 	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import Loader from '$lib/Navigation/Loader.svelte'
+	import { isLoading } from '$lib/loading';
 	initializeStores();
 
+
+	
 	const drawerStore = getDrawerStore();
 
 	function drawerOpen() {
 	drawerStore.open({});
 	}
-
-
-	let loading = false;
-
-	beforeNavigate(() => loading = true);
-
-	afterNavigate(() => loading = false);
 
 
 
@@ -69,7 +65,7 @@
 	</svelte:fragment>
 
 
-	{#if loading == true}
+	{#if $isLoading == true}
 
 		<Loader />
 

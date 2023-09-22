@@ -5,6 +5,8 @@
     export let skin;
     export let type = "skin";
 
+    import name from '$lib/skinName'
+
     const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
 
 </script>
@@ -35,6 +37,12 @@
 {:else if type == "skinlineone"}
 <div class='frame' style='background-image: url("{splash}{skin.tilePath.replace("/lol-game-data/assets/v1/champion-tiles/", "")}")'>
     <span class="absolute bottom-0 skincardinfo text-center">{skin.name}</span>
+
+</div>
+
+{:else if type == "homepage"}
+<div class='frame' style='background-image: url("{skin.tilePath.replace("/lol-game-data/assets/v1/champion-tiles/", "")}")'>
+    <span class="absolute bottom-0 skincardinfo text-center">{name(skin)}</span>
 
 </div>
 
