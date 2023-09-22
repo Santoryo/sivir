@@ -76,7 +76,7 @@
 	{/if}
 
 	<svelte:fragment slot="pageFooter">
-		<div class="p-3 opacity-50">
+		<div class="p-3 opacity-50 w-3/4">
 			<p class="text-xs leading-[0.85rem] w-">© 2023 Sivir.GG. Sivir.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
 
 		</div>

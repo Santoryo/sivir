@@ -17,12 +17,13 @@
 
 	onMount(async () => {
 		skins = await getWishlist();
+		console.log(await pb.collection('users').listExternalAuths(pb.authStore.model?.id))
 	})
 
 
 	async function login()
 	{
-		await pb.collection('users').authWithOAuth2({provider: 'discord'})
+		await pb.collection('users').authWithOAuth2({provider: 'discord', scopes: ['identify']});
 
 	}
 
