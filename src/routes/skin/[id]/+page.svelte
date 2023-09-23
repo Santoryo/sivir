@@ -36,7 +36,6 @@
 
 
         onDestroy(() => {
-            invalidateAll();
             toastStore.clear();
         });
         
