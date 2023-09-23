@@ -23,7 +23,7 @@
     
         <div class="text-4xl font-bold uppercase w-fit">Current Mythic Shop
             <div class="text-2xl font-semibold uppercase">
-                PATCH {data.data.version.slice(0, -2)} — Ends {moment(data.version.date).fromNow()} 
+                PATCH {data.data.version.slice(0, -2)} — Ended {moment(data.version.date).fromNow()} 
             </div>
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>

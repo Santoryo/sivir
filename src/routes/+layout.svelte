@@ -4,12 +4,6 @@
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 	import { initializeStores, Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import { afterUpdate, beforeUpdate, onMount } from 'svelte'
-	import { invalidate, invalidateAll, onNavigate } from '$app/navigation'
-	import { beforeNavigate, afterNavigate } from '$app/navigation';
-	import Loader from '$lib/Navigation/Loader.svelte'
-	import { isLoading } from '$lib/loading';
-	import {fade} from 'svelte/transition'
 	initializeStores();
 
 	export let data;

@@ -1,13 +1,10 @@
 <script lang="ts">
-	import { Auth } from '@supabase/auth-ui-svelte'
-	import { ThemeSupa } from '@supabase/auth-ui-shared'
 	import {currentUser, getWishlist, pb} from '$lib/pocketbase.js'
 	import Icon from '$lib/Icon.svelte'
 	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import moment from 'moment';
 	import { Avatar } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
-	import { goto, invalidateAll, onNavigate } from '$app/navigation';
 
 	let resultList;
 
@@ -69,7 +66,7 @@
 		<ul class="list">
 				{#each skins as skin}
 				<li class="py-0.5">
-					<a href="/skin/{skin.skinData.id}"><Avatar src={skin.skinData.tilePath} width="w-16" rounded="rounded-2xl" /></a>
+					<a href="/skin/{skin.skinData.id}"><Avatar src={skin.skinData.tilePath.replace("http://", "https://")} width="w-16" rounded="rounded-2xl" /></a>
 					<span class="flex-auto"><a href="/skin/{skin.skinData.id}">{skin.name}</a> <br /><span class="opacity-50 text-sm">Added on {moment(skin.updated).format('DD MMM YYYY')}</span></span>
 					<span class="cursor-pointer select-none font-extrabold" on:click={() => {removeFromList(skin)}}>X</span>
 				</li>
