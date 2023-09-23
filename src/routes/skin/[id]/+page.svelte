@@ -208,7 +208,7 @@
                 <svelte:fragment slot="content">
                     <div class="w-full flex flex-row flex-wrap justify-center gap-2">
                         {#each info.skin.chromas as chroma}
-                            <div class='bg-contain bg-no-repeat skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white relative frame' style="background-image: url({chroma.chromaPath})"><span class="absolute bottom-0 skincardinfo text-center">{chroma.name}</span></div>
+                            <div class='bg-contain bg-no-repeat skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white relative frame' style="background-image: url({chroma.chromaPath.replace("http://", "https://")})"><span class="absolute bottom-0 skincardinfo text-center">{chroma.name}</span></div>
                         {/each}
                     </div>
                 </svelte:fragment>
