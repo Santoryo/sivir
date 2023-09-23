@@ -30,7 +30,7 @@
     <p>This Agreement is governed by and construed in accordance with the laws of Poland, irrespective of its conflict of law principles.</p>
 
     <h2 class="text-xl font-bold uppercase py-2">8. Contact Information</h2>
-    <p>Should you have any questions or concerns regarding this Agreement or the handling of your data, please do not hesitate to contact us at [Your Contact Information].</p>
+    <p>Should you have any questions or concerns regarding this Agreement or the handling of your data, please do not hesitate to contact us at contact@sivir.gg</p>
 
     <p>By utilizing the Website, you acknowledge that you have read, comprehended, and agreed to the terms outlined in this Agreement, including those related to data collection and utilization.</p>
 </div>
