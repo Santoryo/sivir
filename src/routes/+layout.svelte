@@ -36,7 +36,7 @@
 							</svg>
 						</span>
 					</button>
-					<strong class="text-xl uppercase">SIVIR.GG</strong>
+					<a href="/"><strong class="text-xl uppercase">SIVIR.GG</strong></a>
 				</div>
 			</svelte:fragment>
 			

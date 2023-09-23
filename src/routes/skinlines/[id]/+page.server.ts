@@ -16,7 +16,7 @@ async function init(skinlineId: string) {
 
     const skinline = data.find((o: any) => o.id == skinlineId);
 
-    let skins: string[] = [];
+    let skins: any = [];
 
     Object.keys(allSkins).forEach(element => {
         if(allSkins[element].skinLines && allSkins[element].skinLines[0].id == skinlineId)

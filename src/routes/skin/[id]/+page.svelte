@@ -104,7 +104,7 @@
     
     </script>
 
-    <Meta titleSuffix={name(info.skin)} description={`All the informations about ${name(info.skin)}`} />
+    <Meta titleSuffix={name(info.skin)} description={`${info.skin.description}`} image={info.skin.tilePath.replace("http://", "https://")} />
 
     <Toast></Toast>
     

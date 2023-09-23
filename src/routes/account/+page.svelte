@@ -5,6 +5,7 @@
 	import moment from 'moment';
 	import { Avatar } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
+    import { faHeadSideVirus } from '@fortawesome/free-solid-svg-icons';
 
 	let resultList;
 
@@ -45,15 +46,13 @@
 </script>
 
 <svelte:head>
-	<title>User Management</title>
+	<title>Sivir.GG | User Management</title>
 </svelte:head>
 
-<!-- <a href=""></a><button>Login with Discord</button> -->
+<Toast />
 
 {#if $currentUser}
 <div class="p-10 flex flex-col gap-3 flex-wrap justify-left items-left text-left">
-
-	<Toast />
 
 	<div class="text-4xl font-bold uppercase w-fit">Welcome back, {$currentUser.username}
 		<div class="text-2xl font-semibold uppercase">
@@ -85,7 +84,7 @@
 
 <div class="p-10 flex flex-col gap-3 flex-wrap justify-center items-center text-center">
 	<div class="text-2xl font-semibold">Login with your Discord account to keep track of your wishlist and edit it any time via the site</div>
-	<div><button on:click={login} type="button" class="btn bg-[#5865F2]"><Icon icon={"discord"} /><span>Login with Discord</span></button></div>
+	<button on:click={login} type="button" class="btn bg-[#5865F2]"><Icon icon={"discord"} /><span>Login with Discord</span></button>
 	<div>By logging in you agree to us storing data associated with your account as set out in our <a href="/policies/privacy-policy">privacy policy.</a></div>
 	
 </div>

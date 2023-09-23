@@ -47,7 +47,7 @@ let plugins = [Autoplay(autoplayOptions)]
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	{#each data.offers as offer}
-	<a href="{offer.content.externalURL}" target="_blank"><div class="card w-[400px] h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+	<a href="{offer.content.externalURL}" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
 		<header>
 			<img src="{offer.assets[0].location2x}" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
 		</header>

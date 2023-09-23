@@ -7,10 +7,13 @@
     import Meta from '$lib/Meta.svelte';
     
     export let data;
-    
+ 
     </script>
     
-    <Meta titleSuffix={data.skins.skinline.name} description={data.skins.skinline.description} />
+    <Meta titleSuffix={data.skins.skinline.name} 
+    description={data.skins.skinline.description} 
+    image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/" 
+    + data.skins.skins[0].tilePath.replace("/lol-game-data/assets/v1/champion-tiles/", "")} />
     
     
     <div class="p-10 flex flex-col">
