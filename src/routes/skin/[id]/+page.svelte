@@ -8,7 +8,6 @@
         import { Toast, getToastStore } from '@skeletonlabs/skeleton';
         import {pb, currentUser, getWishlist} from '$lib/pocketbase.js'
         import { onDestroy, onMount } from 'svelte';
-        import { invalidateAll } from '$app/navigation';
         import name from '$lib/skinName.js';
 
         const toastStore = getToastStore();
@@ -23,7 +22,6 @@
 
 
         onMount(async () => {
-            invalidateAll();
             try {
                 await assignSkinVariable()
                 _skin ? likeStatus = true : likeStatus = false;
