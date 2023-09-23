@@ -169,7 +169,11 @@
                 {#if info.res.length > 0}
                 <div class="h-5 w-full flex flex-row p-1"><div class="w-1/2">Date</div><div class="w-1/2">Time since</div></div>
                 {#each info.res as sale}
+                {#if info.skin.rarity = "Mythic"}
+                <a href="/mythic-shop/{sale._id}"><div class="h-5 w-full flex flex-row p-1"><div class="w-1/2">{moment(timestamp(sale._id)).format('DD MMM Y')}</div><div class="w-1/2">{moment(timestamp(sale._id)).fromNow(true)}</div></div></a>
+                {:else}
                 <a href="/sale-rotation/{sale._id}"><div class="h-5 w-full flex flex-row p-1"><div class="w-1/2">{moment(timestamp(sale._id)).format('DD MMM Y')}</div><div class="w-1/2">{moment(timestamp(sale._id)).fromNow(true)}</div></div></a>
+                {/if}
                 {/each}
                 {:else}
                 <div class="h-5 w-full flex flex-row italic text-sm">This skin wasn't in sale / mythic shop yet.</div>
