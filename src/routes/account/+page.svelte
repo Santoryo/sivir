@@ -43,6 +43,8 @@
         skins = await getWishlist();
     }
 
+	console.log($currentUser)
+
 </script>
 
 <svelte:head>
@@ -56,7 +58,7 @@
 
 	<div class="text-4xl font-bold uppercase w-fit">Welcome back, {$currentUser.username}
 		<div class="text-2xl font-semibold uppercase">
-			You have {skins.length}/15 skins on your wishlist
+			You have {skins.length}/{$currentUser.maxSkins} skins on your wishlist
 		</div>
 	</div>
 

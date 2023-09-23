@@ -16,8 +16,6 @@ export async function getWishlist() {
 			sort: 'created',
 			expand: 'user',
 		})
-
-        console.log(resultList.items)
 		return resultList.items;
 }
 

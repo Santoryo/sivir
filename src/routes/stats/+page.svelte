@@ -41,9 +41,9 @@ let tabSet: number = 0;
 
         {#each data.sales as sale}
         {#if data.sales.indexOf(sale) == 0}
-        <a href="/sale-rotation" class="py-0.5"><div class="flex flex-row uppercase font-bold"><div class="w-[70px] text-right pr-2">NOW</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
+        <a href="/sale-rotation" class="py-0.5 hover:scale-105 smooth bg-"><div class="flex flex-row uppercase font-bold"><div class="w-[70px] text-right pr-2">NOW</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
         {:else}
-        <a href="/sale-rotation/{sale._id}" class="py-0.5"><div class="flex flex-row uppercase"><div class="w-[70px] text-right pr-2">{moment(sale.skins[0].dates.startDate).format('D MMM')}</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
+        <a href="/sale-rotation/{sale._id}" class="py-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase"><div class="w-[70px] text-right pr-2">{moment(sale.skins[0].dates.startDate).format('D MMM')}</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
         {/if}
         {/each}
         </div>
@@ -56,9 +56,9 @@ let tabSet: number = 0;
 
         {#each data.mythics as mythic}
         {#if data.mythics.indexOf(mythic) == 0}
-        <a href="/mythic-shop/" class="py-0.5"><div class="flex flex-row uppercase font-bold">{mythic.version.slice(0, -2)} (CURRENT)</div></a>
+        <a href="/mythic-shop/" class="p-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase font-bold">{mythic.version.slice(0, -2)} (CURRENT)</div></a>
         {:else}
-        <a href="/mythic-shop/{mythic._id}" class="py-0.5"><div class="flex flex-row uppercase">{mythic.version.slice(0, -2)}</div></a>
+        <a href="/mythic-shop/{mythic._id}" class="py-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase">{mythic.version.slice(0, -2)}</div></a>
         {/if}
         {/each}
         </div>

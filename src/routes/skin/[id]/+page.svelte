@@ -69,8 +69,7 @@
         {
             if(likeStatus == false)
             {
-                console.log("adding skin")
-
+                try{
                 const data = {
                     name: name(info.skin),
                     skinData: info.skin,
@@ -79,6 +78,13 @@
 
                 await pb.collection('skins').create(data);
                 likeStatus = !likeStatus;
+
+                }
+                catch
+                {
+                    toastStore.trigger({message: "You've reached max skins on your wishlist", background: 'variant-filled-error'});
+                    return null;
+                }
                 await assignSkinVariable();
             }
 
