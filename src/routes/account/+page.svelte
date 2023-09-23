@@ -1,21 +1,27 @@
 <script lang="ts">
 	import {currentUser, getWishlist, pb} from '$lib/pocketbase.js'
 	import Icon from '$lib/Icon.svelte'
-	import { Toast, getToastStore } from '@skeletonlabs/skeleton';
+	import { Modal, Toast, getToastStore } from '@skeletonlabs/skeleton';
 	import moment from 'moment';
 	import { Avatar } from '@skeletonlabs/skeleton';
     import { onMount } from 'svelte';
     import { faHeadSideVirus } from '@fortawesome/free-solid-svg-icons';
+	import { getModalStore } from '@skeletonlabs/skeleton';
+    import { goto } from '$app/navigation';
 
+	import { page } from '$app/stores';
+
+	const modalStore = getModalStore();
 	let resultList;
 
 	let skins: any = [];
 
 	const toastStore = getToastStore();
 
+
 	onMount(async () => {
 		skins = await getWishlist();
-		console.log(await pb.collection('users').listExternalAuths(pb.authStore.model?.id))
+		pb.collection('users').authRefresh();
 	})
 
 
@@ -43,7 +49,36 @@
         skins = await getWishlist();
     }
 
-	console.log($currentUser)
+	async function buttonCodeActivationHandler()
+	{
+		const modal: any = {
+			type: 'prompt',
+			// Data
+			title: 'Enter the Activation Code',
+			body: 'Provide the Activation Code that you got in the e-mail',
+			// Populates the input value and attributes
+			value: '',
+			valueAttr: { type: 'text', minlength: 36, maxlength: 36, required: true },
+			// Returns the updated response value
+			response: (r: string) => goto(`/order/redeem-code?userId=${$currentUser?.id}&activationCode=${r}`),
+		};
+
+		modalStore.trigger(modal);
+
+	}
+
+	if($page.url.searchParams.has("message"))
+	{
+		const modal: any = {
+			type: 'alert',
+			title: 'Alert',
+			body: $page.url.searchParams.get("message"),
+			};
+		modalStore.trigger(modal);
+		goto('/account', { replaceState: true });
+		
+	}
+
 
 </script>
 
@@ -52,6 +87,7 @@
 </svelte:head>
 
 <Toast />
+<Modal />
 
 {#if $currentUser}
 <div class="p-10 flex flex-col gap-3 flex-wrap justify-left items-left text-left">
@@ -76,10 +112,14 @@
 		</ul>
 	</section>
 
-	<div class="flex flex-row gap-2">
+	<div class="flex flex-row gap-2 flex-shrink-0 flex-wrap">
 		<button on:click={logout} type="button" class="btn variant-filled-primary w-28">Sign Out</button>
 		<a href="https://ko-fi.com/santoryo" target="_blank"><button type="button" class="btn variant-filled-secondary w-fit"><Icon icon={"kofi"} size={"30"} /> <span>Support project on Ko-Fi</span></button></a>
+		<button on:click={buttonCodeActivationHandler} type="button" class="btn variant-filled-tertiary w-fit">Activate Code</button>
+	
 	</div>
+
+
 </div>
 
 {:else}
