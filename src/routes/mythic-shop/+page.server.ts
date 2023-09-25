@@ -5,12 +5,14 @@ export async function load({ }) {
     let skins = await temp.json();
 
     const version = await getVersionDate();
+    
 
     skins.mythic.sort((a, b) => {
         return b.price - a.price;
     });
 
     return {
+        maxage: 3600,
         data: skins, version
     }
     
