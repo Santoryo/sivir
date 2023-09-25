@@ -39,8 +39,8 @@ let plugins = [Autoplay(autoplayOptions)]
 		
 		<div class="embla card-hover" use:emblaCarouselSvelte="{{ options, plugins }}" on:emblaInit="{onInit}">
 			<div class="embla__container">
-		{#each data.banners.banners as banner}
-			<div class="embla__xd embla__slide" style="background-image: url('https://{banner.imgUrl.replace('//', '')}')"></div>
+		{#each data.banners.banners as banner, i}
+			<div class="embla__xd embla__slide" style="background-image: url('https://api.brelshaza.com/v3/banners/{i}.jpg')"></div>
 		{/each}
 		</div>
 		</div>
