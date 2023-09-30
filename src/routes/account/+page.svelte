@@ -126,7 +126,7 @@
 
 <div class="p-10 flex flex-col gap-3 flex-wrap justify-center items-center text-center">
 	<div class="text-2xl font-semibold">Login with your Discord account to keep track of your wishlist and edit it any time via the site</div>
-	<button on:click={login} on:touchstart={login} type="button" class="btn bg-[#5865F2] z-10"><Icon icon={"discord"} /><span>Login with Discord</span></button>
+	<button on:click={login} on:touchstart={login} class="btn bg-[#5865F2] z-10"><Icon icon={"discord"} /><span>Login with Discord</span></button>
 	<div>By logging in you agree to us storing data associated with your account as set out in our <a href="/policies/privacy-policy">privacy policy.</a></div>
 	
 </div>
