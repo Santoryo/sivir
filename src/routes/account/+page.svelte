@@ -28,7 +28,7 @@
 	async function login()
 	{
 		await pb.collection('users').authWithOAuth2({provider: 'discord'})
-		skins = await getWishlist();
+		//skins = await getWishlist();
 
 	}
 
