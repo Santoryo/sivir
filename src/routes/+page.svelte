@@ -6,8 +6,8 @@ import Autoplay from 'embla-carousel-autoplay'
 export let data;
 import Meta from '$lib/Meta.svelte';
 import moment from 'moment';
-import name from '$lib/skinName.ts';
-    import SkinCard from '$lib/SkinCard/SkinCard.svelte';
+import SkinCard from '$lib/SkinCard/SkinCard.svelte';
+
 
 let emblaApi  
 let options = { loop: true }
@@ -46,23 +46,28 @@ let plugins = [Autoplay(autoplayOptions)]
 		</div>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	{#each data.offers as offer}
-	<a href="{offer.content.externalURL}" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+	{#each data.offers.prime as offer}
+	<a href="{offer.link}" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
 		<header>
-			<img src="{offer.assets[0].location2x}" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+			<img src="{offer.img}" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
 		</header>
 		<div class="p-4 space-y-2">
-			<h6 class="h6" data-toc-ignore>Prime Gaming Offers</h6>
-			<h3 class="h3" data-toc-ignore>{offer.title}</h3>
+			<h6 class="h6 opacity-70" data-toc-ignore>Prime Gaming Offers</h6>
+			<h3 class="h3 font-semibold" data-toc-ignore>{offer.title}</h3>
 			<article>
 				<p>
-					{offer.description}
+				{#if offer.title == "Prime Gaming Capsule"}
+				Claim 350 RP, an Epic skin, a Ward skin, Champion shards, XP Boost & more.
+				{/if}
+				{#if offer.title.includes("Emote")}
+				For a limited time only, get an {offer.title} - available for Prime members only.
+				{/if}
 				</p>
 			</article>
 		</div>
 		<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
 			<div class="flex-auto flex justify-between items-center">
-				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.endTime).format("DD MMM Y")} (in {moment().diff(offer.endTime, 'days') * -1} Days)</span></span>
+				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} (in {moment().diff(offer.date, 'days') * -1} Days)</span></span>
 			</div>
 		</footer>
 	</div></a>

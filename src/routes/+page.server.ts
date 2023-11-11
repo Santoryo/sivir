@@ -10,7 +10,7 @@ export async function load({ }) {
     const temp2 = await fetch('https://api.brelshaza.com/v3/data/lol-newest-skins');
     const skins = await temp2.json();
 
-    
+    console.log(offers)
     
     return {banners, offers, skins}
     
