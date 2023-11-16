@@ -47,6 +47,7 @@ let plugins = [Autoplay(autoplayOptions)]
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	{#each data.offers.prime as offer}
+	{#if moment().diff(offer.date, 'days') * -1 >= 0}
 	<a href="{offer.link}" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
 		<header>
 			<img src="{offer.img}" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
@@ -56,6 +57,7 @@ let plugins = [Autoplay(autoplayOptions)]
 			<h3 class="h3 font-semibold" data-toc-ignore>{offer.title}</h3>
 			<article>
 				<p>
+				
 				{#if offer.title == "Prime Gaming Capsule"}
 				Claim 350 RP, an Epic skin, a Ward skin, Champion shards, XP Boost & more.
 				{/if}
@@ -67,10 +69,11 @@ let plugins = [Autoplay(autoplayOptions)]
 		</div>
 		<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
 			<div class="flex-auto flex justify-between items-center">
-				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} (in {moment().diff(offer.date, 'days') * -1} Days)</span></span>
+				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} ({moment(offer.date).fromNow()})</span></span>
 			</div>
 		</footer>
 	</div></a>
+	{/if}
 	{/each}
     
 </div>
