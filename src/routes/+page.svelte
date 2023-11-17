@@ -69,7 +69,7 @@ let plugins = [Autoplay(autoplayOptions)]
 		</div>
 		<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
 			<div class="flex-auto flex justify-between items-center">
-				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} ({moment(offer.date).fromNow()})</span></span>
+				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} ({moment(offer.date + ' ' + "23:59:59").fromNow()})</span></span>
 			</div>
 		</footer>
 	</div></a>
