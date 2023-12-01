@@ -115,7 +115,6 @@
 	<div class="flex flex-row gap-2 flex-shrink-0 flex-wrap">
 		<button on:click={logout} type="button" class="btn variant-filled-primary w-28">Sign Out</button>
 		<a href="https://ko-fi.com/santoryo" target="_blank"><button type="button" class="btn variant-filled-secondary w-fit"><Icon icon={"kofi"} size={"30"} /> <span>Support project on Ko-Fi</span></button></a>
-		<button on:click={buttonCodeActivationHandler} type="button" class="btn variant-filled-tertiary w-fit">Activate Code</button>
 	
 	</div>
 
