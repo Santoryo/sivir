@@ -9,8 +9,6 @@
         export let data;
     
         const skins = data.data.mythic;
-
-        console.log(data.version)
     
     
         const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";

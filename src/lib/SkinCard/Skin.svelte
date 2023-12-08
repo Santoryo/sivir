@@ -29,11 +29,31 @@
 </div>
 
 {:else if skin.type == "ITEM"}
+{#if skin.name.includes("+ Icon")}
 <div class='frame' style='background-image: url("{cdn}{skin.imagePath.toLowerCase()}")'>
     <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
         <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
 
 </div>
+{:else if skin.name.includes(" Icon")}
+<div class='frame' style='background-image: url("https://ddragon.leagueoflegends.com/cdn/13.24.1/img/profileicon/{skin.outputs[0].lootId.replace('SUMMONER_ICON_', '')}.png'>
+    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
+        <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
+
+</div>
+{:else if skin.outputs[0].lootId.includes("WARD_SKIN_")}
+<div class='frame bg-center' style='background-image: url("https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/wardskinimages/{skin.outputs[0].lootId.replace('WARD_SKIN_', 'wardhero_')}.png")'>
+    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
+        <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
+
+</div>
+{:else}
+<div class='frame' style='background-image: url("{cdn}{skin.imagePath.toLowerCase()}")'>
+    <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
+        <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
+
+</div>
+{/if}
 
 
 {/if}

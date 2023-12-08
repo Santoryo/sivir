@@ -28,6 +28,8 @@ async function getVersionDate()
     const response = await version.json();
     const datesresponse = await dates.json();
 
+    console.log(datesresponse)
+
     const ver = response.version.slice(0, -2);
 
 
@@ -35,6 +37,11 @@ async function getVersionDate()
     {
         if(datesresponse[i].version == ver)
         {
+                return {
+                    version: ver,
+                    date: '2024-01-01T23:00:00.000Z'
+                }
+
             return {
                 version: ver,
                 date: datesresponse[i+1].date
@@ -43,7 +50,7 @@ async function getVersionDate()
     }
 
     }
-    catch
+    catch (err)
     {
         return null;
     }
