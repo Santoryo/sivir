@@ -27,7 +27,7 @@
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>
         <div class="flex flex-row">
-            <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
+            <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center"  id="container">
             {#each skins as skin}
 
                 <a href='/skin/{skin.championId}0{skin.number.toLocaleString('en-US', {minimumIntegerDigits: 2})}'><SkinCard skin={skin} /></a>
