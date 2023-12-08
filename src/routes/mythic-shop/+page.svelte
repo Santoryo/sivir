@@ -17,16 +17,16 @@
 
     <Meta titleSuffix="Mythic Shop Rotation" description={"Mythic Shop Rotation for Patch " + data.version.version} />
     
-    <div class="p-10 flex flex-col items-left lg:items-left">
+    <div class="p-10 flex flex-col items-left lg:items-left" id="container">
     
-        <div class="text-4xl font-bold uppercase w-fit">Current Mythic Shop
+        <div class="text-4xl font-bold uppercase w-fit" id="title">Current Mythic Shop
             <div class="text-2xl font-semibold uppercase">
-                PATCH {data.data.version.slice(0, -2)} — Ends {moment(data.version.date).fromNow()} 
+                PATCH {data.data.version.slice(0, -2)} <span id="endsIn">— Ends {moment(data.version.date).fromNow()}</span>
             </div>
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>
         <div class="flex flex-row">
-            <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center" id="container">
+            <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
             {#each skins as skin}
 
                 {#if skin.type == "SKIN"}
