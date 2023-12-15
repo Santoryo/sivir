@@ -17,6 +17,8 @@ const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 
 onDestroy(() => {unsubscribe});
 
+console.log(data.champions)
+
 
 
 </script>

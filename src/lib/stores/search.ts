@@ -28,7 +28,8 @@ export const createSearchStore = <T extends Record<PropertyKey, any>> (data: T[]
 export const searchHandler = <T extends Record<PropertyKey, any>> (store: SearchStoreModel<T>) => {
     const searchTerm = store.search.toLowerCase() || ""
     store.filtered = store.data.filter((item) => {
-        return item.name.toLowerCase().includes(searchTerm);
+        const itemName = item.name || "";
+        return itemName.toLowerCase().includes(searchTerm);
 
     })
 }

@@ -32,6 +32,7 @@
         <a href="/stats" on:click={() => drawerClose("/stats")} class:bg-primary-active-token={$page.url.pathname == "/stats"}><i class='nav-icon' style='background-image: url("/lol/stats.webp")'></i> STATS</a>
         <a href="/discord" on:click={() => drawerClose("/discord")} class:bg-primary-active-token={$page.url.pathname == "/discord"}><i class='nav-icon' style='background-image: url("/bot.png")'></i> DISCORD BOT</a>
         <a href="/timeline" on:click={() => drawerClose("/timeline")} class:bg-primary-active-token={$page.url.pathname == "/timeline"}><i class='nav-icon' style='background-image: url("/calendar.png")'></i> TIMELINE</a>
+        <a href="/emporium" on:click={() => drawerClose("/emporium")} class:bg-primary-active-token={$page.url.pathname == "/emporium"}><i class='nav-icon' style='background-image: url("/lol/BE.png")'></i> EMPORIUM</a>
 
 
         <div class="mt-auto"><a href="/account" on:click={() => drawerClose("/account")} class:bg-primary-active-token={$page.url.pathname == "/account"}>

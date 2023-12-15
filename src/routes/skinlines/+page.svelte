@@ -7,6 +7,7 @@ import { onDestroy } from 'svelte';
 import Meta from '$lib/Meta.svelte';
 
 export let data;
+console.log(data.champions)
 
 const searchStore = createSearchStore(data.champions)
 
