@@ -38,17 +38,9 @@ function selectAll()
 
 $: all = accessories && loot && chromas;
 
-function getEmote(name: string)
-{
-    if(name == "But Why?") return "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/odyssey/em_odyssey_sona_inventory.png";
-    
-
-    return "";
-}
-
 </script>
 
-<Meta titleSuffix={"Champions"} description={`All League of Legends champions in the game. There are currently ` + data.champions.length + " champions."} />
+<Meta titleSuffix={"Emporium"} description={`Blue Essence Emporium 2023. There is ` + data.champions.length + " items available in this Emporium Sale."} />
 
 
 
