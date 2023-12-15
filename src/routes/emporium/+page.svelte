@@ -1,20 +1,20 @@
 <script lang="ts">
 // @ts-nocheck
-import SkinCard from '$lib/SkinCard/SkinCard.svelte';
-import { createSearchStore, searchHandler } from '$lib/stores/search';
+import { createSearchStore, searchHandler, emporiumSearch } from '$lib/stores/search';
 import moment from 'moment';
-import { onDestroy } from 'svelte';
-import { goto } from '$app/navigation'
+import { onDestroy, onMount } from 'svelte';
 import Meta from '$lib/Meta.svelte';
 export let data;
-import { SlideToggle } from '@skeletonlabs/skeleton';
+import { SlideToggle, filter } from '@skeletonlabs/skeleton';
 
+const searches = data.champions.map((champion: { name: string; }) => ({
+    ...champion,
+    searchTerms: `${champion.name.toLowerCase()} ${champion.inventoryType} ${champion.subInventoryType}`,
+}));
 
-const searchStore = createSearchStore(data.champions)
+const searchStore = createSearchStore(searches)
 const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 onDestroy(() => {unsubscribe});
-
-console.log(data.champions)
 
 let image;
 let observer;
@@ -37,6 +37,25 @@ function selectAll()
 }
 
 $: all = accessories && loot && chromas;
+
+let search = '';
+
+let itemsToShow = 250;
+let loadMore;
+
+  onMount(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          itemsToShow += 100;
+        }
+      });
+    });
+
+    observer.observe(loadMore);
+  });
+
+  $: if (search) itemsToShow += 100;
 
 </script>
 
@@ -73,10 +92,11 @@ $: all = accessories && loot && chromas;
     <div class="text-2xl font-bold uppercase h-4"></div>
     <div class="flex flex-row">
         <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-        {#each $searchStore.filtered as champion}
+        {#each $searchStore.filtered.slice(0, itemsToShow) as champion}
 
         {#if champion.subInventoryType == "RECOLOR" && chromas}
-        <div class='frame' style='background-image: url("https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/{champion.itemId.toString().slice(0, -3)}/{champion.itemId}.png")'>
+        <div class='frame' loading="lazy">
+            <img src="https://cdn.brelshaza.com/chromas/{champion.itemId.toString().slice(0, -3)}/{champion.itemId}.webp" loading="lazy" alt="{champion.name}">
             <span class="absolute bottom-0 skincardinfo text-center">{champion.name}
                 <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/BE.png")'></div> {champion.sale.ip} <span class='font-light'></span></span>
         </div>
@@ -122,6 +142,7 @@ $: all = accessories && loot && chromas;
 
         {/if}
 
+        <div bind:this={loadMore}></div>
         </div>
 
     </div>

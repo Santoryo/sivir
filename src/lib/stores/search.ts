@@ -33,3 +33,11 @@ export const searchHandler = <T extends Record<PropertyKey, any>> (store: Search
 
     })
 }
+
+export const emporiumSearch = <T extends Record<PropertyKey, any>> (store: SearchStoreModel<T>) => {
+    const searchTerm = store.search.toLowerCase() || ""
+    store.filtered = store.data.filter((item) => {
+        const itemName = item.searchTerm || "";
+        return itemName.toLowerCase().includes(searchTerm);
+    })
+}
