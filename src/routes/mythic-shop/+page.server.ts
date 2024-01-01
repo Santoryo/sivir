@@ -37,11 +37,6 @@ async function getVersionDate()
     {
         if(datesresponse[i].version == ver)
         {
-                return {
-                    version: ver,
-                    date: '2024-01-01T23:00:00.000Z'
-                }
-
             return {
                 version: ver,
                 date: datesresponse[i+1].date
@@ -52,6 +47,9 @@ async function getVersionDate()
     }
     catch (err)
     {
-        return null;
+        return {
+            version: ver,
+            date: datesresponse[datesresponse.length - 1].date
+        }
     }
 }

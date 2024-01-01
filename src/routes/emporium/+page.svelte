@@ -69,7 +69,7 @@ let loadMore;
 
     <div class="text-4xl font-bold uppercase w-fit"><div class="flex flex-row">Blue Essence Emporium <img src="/lol/BE.png" class="w-8 h-8 ml-2"></div>
         <div class="text-2xl font-semibold uppercase">
-            Emporium ends {moment(data.champions[0].sale.endDate).fromNow()}
+            Emporium ended {moment(data.champions[0].sale.endDate).fromNow()}
         </div>
     </div>
 
