@@ -1,7 +1,7 @@
 <div class='p-10'>
     <h1 class="text-3xl font-bold uppercase py-2">Terms of Use Agreement</h1>
 
-    <p><strong>Effective Date:</strong> September 22, 2023</p>
+    <p><strong>Effective Date:</strong> January 14, 2024</p>
 
     <h2 class="text-xl font-bold uppercase py-2">1. Agreement Acceptance</h2>
     <p>Welcome to Sivir.GG (the "Website"). By accessing or using the Website, you agree to comply with and be bound by the following Terms of Use Agreement (the "Agreement"). Please carefully read and understand the terms herein. If you do not agree to these terms, kindly refrain from using the Website.</p>
@@ -30,7 +30,18 @@
     <p>This Agreement is governed by and construed in accordance with the laws of Poland, irrespective of its conflict of law principles.</p>
 
     <h2 class="text-xl font-bold uppercase py-2">8. Contact Information</h2>
-    <p>Should you have any questions or concerns regarding this Agreement or the handling of your data, please do not hesitate to contact us at contact@sivir.gg</p>
+    <p>Should you have any questions or concerns regarding this Agreement or the handling of your data, please do not hesitate to contact us at santoryo.evergarden@gmail.com</p>
+
+    <h2 class="text-xl font-bold uppercase py-2">9. Prohibited Activities</h2>
+    <p><strong>a. Scraping Data:</strong> The unauthorized collection, scraping, or extraction of data from the Website is strictly prohibited. Users are expressly forbidden from using automated methods, software, or any other means to access, collect, or monitor any portion of the Website without our prior written consent.</p>
+    <p><strong>b. Unauthorized Use of Website Content:</strong> Users are not permitted to reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the content on the Website without the explicit written consent of Sivir.GG. Unauthorized use of the Website's content may violate copyright, trademark, and other applicable laws.</p>
+
+    <h2 class="text-xl font-bold uppercase py-2">10. Enforcement</h2>
+    <p><strong>a.</strong> We reserve the right to take appropriate legal action, including but not limited to seeking injunctive relief, monetary damages, and attorney's fees, against individuals or entities engaging in prohibited activities outlined in Section 9.</p>
+    <p><strong>b.</strong> Violations of this Agreement may result in the termination of user accounts and/or legal action, as deemed necessary.</p>
+
+    <h2 class="text-xl font-bold uppercase py-2">11. Changes to Terms of Use</h2>
+    <p>We reserve the right to modify, update, or revise these Terms of Use at any time. Users will be notified of any significant changes, and continued use of the Website after such modifications constitutes acceptance of the updated terms.</p>
 
     <p>By utilizing the Website, you acknowledge that you have read, comprehended, and agreed to the terms outlined in this Agreement, including those related to data collection and utilization.</p>
 </div>
