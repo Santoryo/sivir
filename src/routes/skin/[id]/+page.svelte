@@ -157,7 +157,7 @@
 
             <div class="text-xl italic font-semibold uppercase flex flex-col">
                 {#if info.skin.id == 245056 || info.skin.id == 202037 || info.skin.id == 64052} <span class="text-red-500 font-bold not-italic">Mythic Scam</span> {/if}
-                <div class="not-italic">Release date: {moment(info.skin.release).format('D MMM Y')}</div>
+                <div class="not-italic">{moment(info.skin.release).isValid() ? "Release date: " + moment(info.skin.release).format('D MMM Y') : "SKIN COMING SOON"}</div>
                 {#if info.skin.chromas.length > 0}<div><div class="h-[15px] w-[15px] bg-cover inline-block bg-center shadow-lg" style='background-image: url("/lol/chromas.webp")'></div> {info.skin.chromas.length} chromas</div>{/if}
                 {#if info.skin.set[0]}<div><div class="h-[15px] w-[15px] bg-cover inline-block bg-center shadow-lg" style='background-image: url("/lol/set.png")'></div> <span class='text-xl font-semibold'>{info.skin.set[0]}</span></div>{/if}<br>
                 {#if info.skin.splashArtist.length > 0}<div><div class="h-[15px] w-[15px] bg-cover bg-center inline-block shadow-lg" style='background-image: url("/lol/artist.png")'></div> {eachString(info.skin.splashArtist)}</div>{/if}
