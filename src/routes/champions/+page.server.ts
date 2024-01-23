@@ -6,7 +6,7 @@ export async function load({ }) {
 
 async function init ()
 {
-    const res = await fetch('https://cdn.sivir.gg/getData?f=champions.json&provider=meraki', {method: "GET"});
+    const res = await fetch('https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/champions.json', {method: "GET"});
     const data = await res.json();
     let champions = [];
 
