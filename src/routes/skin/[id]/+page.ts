@@ -6,7 +6,7 @@ export async function load({params}) {
 }
 
 async function init(skinID: string) {
-    const response = await fetch(`https://api.brelshaza.com/v3/data/lol-skin/${skinID}`, {mode: 'no-cors', method: 'GET', headers: {'Content-Access-Control-Allow-Origin': '*'}})
+    const response = await fetch(`https://api.brelshaza.com/v3/data/lol-skin/${skinID}`, {method: 'GET'})
     let skin = await response.json();
 
     if(skin.version.res.length > 0) skin.version.res.reverse();
