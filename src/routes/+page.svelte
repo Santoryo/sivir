@@ -37,44 +37,102 @@ let plugins = [Autoplay(autoplayOptions)]
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="flex flex-row shrink-0 flex-wrap gap-3 content-center items-center justify-center w-full">
 		
-		<div class="embla card-hover" use:emblaCarouselSvelte="{{ options, plugins }}" on:emblaInit="{onInit}">
+		<!-- <div class="embla card-hover" use:emblaCarouselSvelte="{{ options, plugins }}" on:emblaInit="{onInit}">
 			<div class="embla__container">
 		{#each data.banners.banners as banner, i}
 			<div class="embla__xd embla__slide" style="background-image: url('https://api.brelshaza.com/v3/banners/{i}.jpg')"></div>
 		{/each}
 		</div>
+		</div> -->
+
+		<div class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</div>
+
+		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
+			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+				<header>
+					<img src="./yourshop.webp" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+				</header>
+				<div class="p-4 space-y-2">
+					<h6 class="h6 opacity-70" data-toc-ignore>Your Shop</h6>
+					<h3 class="h3 font-semibold" data-toc-ignore>Your Shop</h3>
+					<article>
+						<p>
+						Reveal mystery discounts on skins & champions. See something you like? Be sure to pick it up before time runs out!
+						</p>
+					</article>
+				</div>
+				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
+					<div class="flex-auto flex justify-between items-center">
+						<span class="font-light">Ends on <span class="font-semibold">{moment("20240313").format("DD MMM Y")} ({moment("20240313").fromNow()})</span></span>
+					</div>
+				</footer>
+			</div>
 		</div>
 
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	{#each data.offers.prime as offer}
-	{#if moment().diff(offer.date, 'days') * -1 >= 0}
-	<a href="{offer.link}" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
-		<header>
-			<img src="{offer.img}" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
-		</header>
-		<div class="p-4 space-y-2">
-			<h6 class="h6 opacity-70" data-toc-ignore>Prime Gaming Offers</h6>
-			<h3 class="h3 font-semibold" data-toc-ignore>{offer.title}</h3>
-			<article>
-				<p>
-				
-				{#if offer.title == "Prime Gaming Capsule"}
-				Claim 350 RP, an Epic skin, a Ward skin, Champion shards, XP Boost & more.
-				{/if}
-				{#if offer.title.includes("Emote")}
-				For a limited time only, get an {offer.title} - available for Prime members only.
-				{/if}
-				</p>
-			</article>
-		</div>
-		<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
-			<div class="flex-auto flex justify-between items-center">
-				<span class="font-light">Ends on <span class="font-semibold">{moment(offer.date).format("DD MMM Y")} ({moment(offer.date + ' ' + "23:59:59").fromNow()})</span></span>
+		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
+			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+				<header>
+					<img src="http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/40/40056.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+				</header>
+				<div class="p-4 space-y-2">
+					<h6 class="h6 opacity-70" data-toc-ignore>Periodic Event</h6>
+					<h3 class="h3 font-semibold" data-toc-ignore>Lunar Revel 2024</h3>
+					<article>
+						<p>
+							From the heavens to the earth, real magic ignites when we celebrate together.						</p>
+					</article>
+				</div>
+				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
+					<div class="flex-auto flex justify-between items-center">
+						<span class="font-light">Ends on <span class="font-semibold">{moment("20240312").format("DD MMM Y")} ({moment("20240312").fromNow()})</span></span>
+					</div>
+				</footer>
 			</div>
-		</footer>
-	</div></a>
-	{/if}
-	{/each}
+		</div>
+
+		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
+			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+				<header>
+					<img src="./season14.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+				</header>
+				<div class="p-4 space-y-2">
+					<h6 class="h6 opacity-70" data-toc-ignore>Ranked</h6>
+					<h3 class="h3 font-semibold" data-toc-ignore>Season 2024 - Split 1</h3>
+					<article>
+						<p>
+							Ranked Season 2024 Split 1 is here! Get ready to climb the ladder and earn rewards.						</p>
+					</article>
+				</div>
+				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
+					<div class="flex-auto flex justify-between items-center">
+						<span class="font-light">Ends on <span class="font-semibold">{moment("20240611").format("DD MMM Y")} ({moment("20240611").fromNow()})</span></span>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<a href="https://gaming.amazon.com/claim/leagueoflegends?ingress=amzn&ref_=SM_LOL13_IGP" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+			<header>
+				<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc419c6065a69ca55/617361fe77dfa05a8cacff6a/LoL_Prime_Gaming_Capsule_Launch_Article_Thumbnail.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+			</header>
+			<div class="p-4 space-y-2">
+				<h6 class="h6 opacity-70" data-toc-ignore>Prime Gaming Offers</h6>
+				<h3 class="h3 font-semibold" data-toc-ignore>Prime Gaming Capsule</h3>
+				<article>
+					<p>
+					Claim 350 RP, an Epic skin, a Ward skin, Champion shards, XP Boost & more.
+					</p>
+				</article>
+			</div>
+			<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
+				<div class="flex-auto flex justify-between items-center">
+					<span class="font-light">Ends on <span class="font-semibold">{moment("20240314").format("DD MMM Y")} ({moment("20240314").fromNow()})</span></span>
+				</div>
+			</footer>
+		</div></a>
+
+
+
     
 </div>
 
