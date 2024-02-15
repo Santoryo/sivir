@@ -72,7 +72,7 @@ let plugins = [Autoplay(autoplayOptions)]
 		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
 			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
 				<header>
-					<img src="http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/40/40056.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+					<img src="https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/40/40056.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
 				</header>
 				<div class="p-4 space-y-2">
 					<h6 class="h6 opacity-70" data-toc-ignore>Periodic Event</h6>
