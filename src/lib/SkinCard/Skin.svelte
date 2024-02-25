@@ -4,11 +4,11 @@
 
     export let skin;
 
-    const splash = "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
+    const splash = "https://cdn.brelshaza.com/assets/champion-tiles/";
 
-    const cdn = "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/loot/"
+    const cdn = "https://cdn.brelshaza.com/assets/loot/"
 
-    const emotecdn = "https://raw.communitydragon.org/latest/game/"
+    const emotecdn = "https://cdn.brelshaza.com/assets/emotes/"
 
 </script>
 
@@ -42,7 +42,7 @@
 
 </div>
 {:else if skin.outputs[0].lootId.includes("WARD_SKIN_")}
-<div class='frame bg-center' style='background-image: url("https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/wardskinimages/{skin.outputs[0].lootId.replace('WARD_SKIN_', 'wardhero_')}.png")'>
+<div class='frame bg-center' style='background-image: url("http://cdn.brelshaza.com/assets/wardskinimages/{skin.outputs[0].lootId.replace('WARD_SKIN_', 'wardhero_')}.png")'>
     <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
         <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
 

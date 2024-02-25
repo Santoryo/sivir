@@ -7,7 +7,7 @@
 
     import name from '$lib/skinName'
 
-    const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
+    const splash = "https://cdn.brelshaza.com/assets/champion-tiles/";
 
 </script>
 
