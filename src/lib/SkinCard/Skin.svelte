@@ -42,7 +42,7 @@
 
 </div>
 {:else if skin.outputs[0].lootId.includes("WARD_SKIN_")}
-<div class='frame bg-center' style='background-image: url("http://cdn.brelshaza.com/assets/wardskinimages/{skin.outputs[0].lootId.replace('WARD_SKIN_', 'wardhero_')}.png")'>
+<div class='frame bg-center' style='background-image: url("https://cdn.brelshaza.com/assets/wardskinimages/{skin.outputs[0].lootId.replace('WARD_SKIN_', 'wardhero_')}.png")'>
     <span class="absolute bottom-0 skincardinfo text-center">{skin.name}
         <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/ME.webp")'></div> {skin.price} <span class='font-light'></span></span>
 
