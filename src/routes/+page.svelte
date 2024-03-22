@@ -47,48 +47,6 @@ let plugins = [Autoplay(autoplayOptions)]
 
 		<div class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</div>
 
-		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
-				<header>
-					<img src="./yourshop.webp" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
-				</header>
-				<div class="p-4 space-y-2">
-					<h6 class="h6 opacity-70" data-toc-ignore>Your Shop</h6>
-					<h3 class="h3 font-semibold" data-toc-ignore>Your Shop</h3>
-					<article>
-						<p>
-						Reveal mystery discounts on skins & champions. See something you like? Be sure to pick it up before time runs out!
-						</p>
-					</article>
-				</div>
-				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
-					<div class="flex-auto flex justify-between items-center">
-						<span class="font-light">Ends on <span class="font-semibold">{moment("20240313").format("DD MMM Y")} ({moment("20240313").fromNow()})</span></span>
-					</div>
-				</footer>
-			</div>
-		</div>
-
-		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
-				<header>
-					<img src="https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/uncentered/40/40056.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
-				</header>
-				<div class="p-4 space-y-2">
-					<h6 class="h6 opacity-70" data-toc-ignore>Periodic Event</h6>
-					<h3 class="h3 font-semibold" data-toc-ignore>Lunar Revel 2024</h3>
-					<article>
-						<p>
-							From the heavens to the earth, real magic ignites when we celebrate together.						</p>
-					</article>
-				</div>
-				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
-					<div class="flex-auto flex justify-between items-center">
-						<span class="font-light">Ends on <span class="font-semibold">{moment("20240312").format("DD MMM Y")} ({moment("20240312").fromNow()})</span></span>
-					</div>
-				</footer>
-			</div>
-		</div>
 
 		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
 			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
@@ -110,26 +68,6 @@ let plugins = [Autoplay(autoplayOptions)]
 				</footer>
 			</div>
 		</div>
-
-		<a href="https://gaming.amazon.com/claim/leagueoflegends?ingress=amzn&ref_=SM_LOL13_IGP" target="_blank"><div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
-			<header>
-				<img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc419c6065a69ca55/617361fe77dfa05a8cacff6a/LoL_Prime_Gaming_Capsule_Launch_Article_Thumbnail.jpg" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
-			</header>
-			<div class="p-4 space-y-2">
-				<h6 class="h6 opacity-70" data-toc-ignore>Prime Gaming Offers</h6>
-				<h3 class="h3 font-semibold" data-toc-ignore>Prime Gaming Capsule</h3>
-				<article>
-					<p>
-					Claim 350 RP, an Epic skin, a Ward skin, Champion shards, XP Boost & more.
-					</p>
-				</article>
-			</div>
-			<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
-				<div class="flex-auto flex justify-between items-center">
-					<span class="font-light">Ends on <span class="font-semibold">{moment("20240314").format("DD MMM Y")} ({moment("20240314").fromNow()})</span></span>
-				</div>
-			</footer>
-		</div></a>
 
 
 
