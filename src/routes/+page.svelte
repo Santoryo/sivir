@@ -69,6 +69,27 @@ let plugins = [Autoplay(autoplayOptions)]
 			</div>
 		</div>
 
+		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
+			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+				<header>
+					<img src="https://support-leagueoflegends.riotgames.com/hc/article_attachments/27390867498643" class="bg-black/50 w-full aspect-[16/9]" alt="Post" />
+				</header>
+				<div class="p-4 space-y-2">
+					<h6 class="h6 opacity-70" data-toc-ignore>Periodic Events</h6>
+					<h3 class="h3 font-semibold" data-toc-ignore>High Noon 2024</h3>
+					<article>
+						<p>
+							Gunslingers and lawmen ride beneath the merciless sun of the high frontier, chasing survival and salvation in equal measure. Heaven is rubble, hell is empty, and all the devils are here.	</p>
+					</article>
+				</div>
+				<footer class="p-4 flex justify-start items-center absolute bottom-0 w-full border-t-[1px] border-white/10">
+					<div class="flex-auto flex justify-between items-center">
+						<span class="font-light">Ends on <span class="font-semibold">{moment("20240429").format("DD MMM Y")} ({moment("20240429").fromNow()})</span></span>
+					</div>
+				</footer>
+			</div>
+		</div>
+
 
 
     
