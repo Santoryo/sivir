@@ -28,6 +28,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@dimfeld/svelte-lazyload": "^0.0.4",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@supabase/auth-helpers-sveltekit": "^0.10.2",
@@ -45,6 +46,7 @@
     "mongodb": "^6.1.0",
     "node-fetch": "^3.3.2",
     "pocketbase": "^0.18.0",
+    "react-intersection-observer": "^9.8.1",
     "svelte-carousel": "^1.0.25",
     "svelte-fa": "^3.0.4",
     "svelte-gantt": "^4.2.1",

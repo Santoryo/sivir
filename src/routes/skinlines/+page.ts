@@ -6,11 +6,11 @@ export async function load({ }) {
 
 async function init ()
 {
-    const res = await fetch('https://cdn.brelshaza.com/json/skinlines.json', {method: "GET"})
+    const res = await fetch('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/skinlines.json', {method: "GET"})
     const data = await res.json();
     let champions: any = [];
 
-    const res1 = await fetch('https://cdn.brelshaza.com/json/skins.json', {method: "GET"})
+    const res1 = await fetch('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/skins.json', {method: "GET"})
     const splashes = await res1.json();
 
     for (const [key, value] of Object.entries(data))

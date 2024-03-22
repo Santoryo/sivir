@@ -15,7 +15,7 @@
 	<title>{titleWithSuffix}</title>
 	<meta name="title" content={titleWithSuffix} />
 	<meta name="description" content={description} />
-	<meta name="theme-color" content="#ed7014">
+	<meta name="theme-color" content="#FF3D3D">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />

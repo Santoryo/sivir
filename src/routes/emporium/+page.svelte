@@ -116,7 +116,7 @@ let loadMore;
                 <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/BE.png")'></div> {champion.sale.ip} <span class='font-light'></span></span>
         </div>
         {:else if champion.inventoryType == "WARD_SKIN" && accessories}
-        <div class='frame' style='background-image: url("https://cdn.brelshaza.com/assets/wardskinimages/{champion.iconUrl.replace("skin", "hero").replace(".jpg", ".png")}")'>
+        <div class='frame' style='background-image: url("https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/wardskinimages/{champion.iconUrl.replace("skin", "hero").replace(".jpg", ".png")}")'>
             <span class="absolute bottom-0 skincardinfo text-center">{champion.name}
                 <br> <div class="h-[15px] w-[15px] bg-cover inline-block bg-center" style='background-image: url("/lol/BE.png")'></div> {champion.sale.ip} <span class='font-light'></span></span>
         </div>

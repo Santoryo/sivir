@@ -13,7 +13,7 @@
         console.log(data.version)
     
     
-        const splash = "https://cdn.brelshaza.com/assets/champion-tiles/";
+        const splash = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-tiles/";
 
         const isCurrent = new Date(data.version.date) > Date.now()
 

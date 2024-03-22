@@ -6,7 +6,7 @@ export async function load({params}) {
 }
 
 async function init(championName: string) {
-    const response = await fetch('https://cdn.brelshaza.com/json/champions.json')
+    const response = await fetch('https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/champions.json')
     const champions = await response.json();
 
     const champ: any = Object.keys(champions).find(o => champions[o].name.toLowerCase() == championName.toLowerCase())
