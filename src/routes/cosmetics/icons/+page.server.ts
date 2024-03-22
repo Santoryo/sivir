@@ -19,6 +19,7 @@ async function init (page: string | null, filter: string | null)
   const data = await res.json();
   data.sort((a: { yearReleased: number; }, b: { yearReleased: number; }) => b.yearReleased - a.yearReleased);
 
+
   if(filter)
   {
     return [data.filter((icon: { title: string; }) => icon.title.toLowerCase().includes(filter.toLowerCase())).slice(0, 100), data.filter((icon: { title: string; }) => icon.title.toLowerCase().includes(filter.toLowerCase())).length]
