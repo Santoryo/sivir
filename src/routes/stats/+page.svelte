@@ -16,6 +16,8 @@ onMount(async () => {
 let tabSet: number = 0;
 
 
+console.log(list)
+
 </script>
 
 <div class="p-10 flex flex-row flex-shrink-0 flex-wrap gap-3 justify-center">
@@ -26,7 +28,7 @@ let tabSet: number = 0;
         {#each list as skin (skin)}
         <li class="py-0.5 hover:bg-primary">
             <span class="p-2 h-10 w-10 text-center">{list.indexOf(skin) + 1}</span>
-            <a href="/skin/{skin.skinData.id}"><Avatar src={skin.skinData.tilePath.replace("http://", "https://")} width="w-16" rounded="rounded-2xl" /></a>
+            <a href="/skin/{skin.skinData.id}"><Avatar src="//wsrv.nl/?url=raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/{skin.skinData.championName.replace("'", "").replace(" ", "").toLowerCase()}/skins/skin{skin.skinData.id.toString().slice(-2)}/images/{skin.skinData.championName.replace("'", "").replace(" ", "").toLowerCase()}_splash_tile_{skin.skinData.id.toString().slice(-2)}.jpg" width="w-16" rounded="rounded-2xl" /></a>
             <span class="flex-auto"><a href="/skin/{skin.skinData.id}">{skin.id}</a> <br /><span class="opacity-50 text-sm">Wishlisted {skin.total}x times</span></span>
         </li>
             

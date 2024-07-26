@@ -35,7 +35,7 @@ let plugins = [Autoplay(autoplayOptions)]
 	</div>
 	<div class="text-2xl font-bold uppercase h-4"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="flex flex-row shrink-0 flex-wrap gap-3 content-center items-center justify-center w-full">
+    <!-- <div class="flex flex-row shrink-0 flex-wrap gap-3 content-center items-center justify-center w-full"> -->
 		
 		<!-- <div class="embla card-hover" use:emblaCarouselSvelte="{{ options, plugins }}" on:emblaInit="{onInit}">
 			<div class="embla__container">
@@ -45,7 +45,7 @@ let plugins = [Autoplay(autoplayOptions)]
 		</div>
 		</div> -->
 
-		<div class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</div>
+		<!-- <div class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</div>
 
 
 		<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
@@ -93,7 +93,7 @@ let plugins = [Autoplay(autoplayOptions)]
 
 
     
-</div>
+</div> -->
 
 <div class="text-3xl font-bold w-full h-fit py-4 uppercase">NEWEST SKINS</div>
 <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
