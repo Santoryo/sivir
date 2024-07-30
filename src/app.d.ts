@@ -17,4 +17,58 @@ declare global {
       export * from '@fortawesome/pro-solid-svg-icons';
     }
   }
+
+  interface Champion {
+    id: string;
+    championId: number;
+    key: string;
+    name: string;
+    title: string;
+    fullName: string;
+    releaseDate: string;
+    releasePatch: string;
+    price: any;
+    lore: string;
+    faction: string;
+    skins: SkinData[];
+    splashPath: string;
+    uncenteredSplashPath: string;
+    tilePath: string;
+    loadScreenPath: string;
+    expand: {
+      skins: SkinData[]
+    }
+  }
+
+  interface SkinData {
+    id: string;
+    skinId: number;
+    name: string;
+    isBase: boolean;
+    availability: string;
+    formatName: string;
+    lootEligible: boolean;
+    cost: number;
+    sale: number;
+    distribution: string;
+    rarity: string;
+    chromas: string;
+    lore: string;
+    release: string;
+    set: string[];
+    splashPath: string;
+    uncenteredSplashPath: string;
+    tilePath: string;
+    loadScreenPath: string;
+    loadScreenVintagePath: string;
+    newEffects: boolean;
+    newAnimations: boolean;
+    newRecall: boolean;
+    newVoice: boolean;
+    newQuotes: boolean;
+    voiceActor: string[];
+    model: "";
+  }
+
+
 }

@@ -66,12 +66,14 @@
 
 	<svelte:fragment slot="pageFooter">
 
-	<div class="flex flex-col gap-0 text-center justify-center">
-		<div class="opacity-50 w-full flex flex-row gap-2 justify-center align-middle text-sm">
-			<a href="/policies/privacy-policy">Privacy Policy</a> <a href="/policies/terms-of-use">Terms of Use</a>
+	<div class="flex flex-col gap-2 text-center justify-center items-center">
+		<div class="opacity-50 w-full flex flex-row gap-4 justify-center align-middle text-sm">
+			<a href="/policies/privacy-policy">Privacy Policy</a>
+			<a href="/policies/terms-of-use">Terms of Use</a>
+			<a href="https://www.digitalocean.com/?refcode=ac144b6ea0f5&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge" target="_blank">Powered by DigitalOcean</a>
 		</div>
-		<div class="p-3 opacity-50 w-full">
-			<p class="text-xs leading-[0.85rem] w-">© 2023 Sivir.GG. Sivir.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+		<div class="opacity-50 w-full">
+			<p class="text-xs leading-[0.85rem] mb-3">© 2023 Sivir.GG. Sivir.GG isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
 
 		</div>
 

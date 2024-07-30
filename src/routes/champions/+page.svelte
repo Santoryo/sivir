@@ -1,62 +1,51 @@
 <script lang="ts">
-// @ts-nocheck
-import SkinCard from '$lib/SkinCard/SkinCard.svelte';
-import { createSearchStore, searchHandler } from '$lib/stores/search';
-import moment from 'moment';
-import { onDestroy } from 'svelte';
-import { goto } from '$app/navigation'
-  import Meta from '$lib/Meta.svelte';
+	// @ts-nocheck
+	import SkinCard from '$lib/SkinCard/SkinCard.svelte';
+	import { createSearchStore, searchHandler } from '$lib/stores/search';
+	import moment from 'moment';
+	import { onDestroy, onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import Meta from '$lib/Meta.svelte';
+	import ChampionCard from '$lib/ChampionCard/ChampionCard.svelte';
 
-export let data;
+	let data: Champion[] = [];
+	let searchValue: string = '';
 
-const namesArray = data.champions.map(champion => champion.name)
-
-const searchStore = createSearchStore(data.champions)
-
-const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
-
-onDestroy(() => {unsubscribe});
-
-console.log(data.champions)
-
-
-
+	onMount(async () => {
+		const temp = await fetch('/api/champions/none/championId,tilePath,price,name');
+		data = await temp.json();
+	});
 </script>
 
-<Meta titleSuffix={"Champions"} description={`All League of Legends champions in the game. There are currently ` + data.champions.length + " champions."} />
+<Meta titleSuffix={'Champions'} description={`All League of Legends champions in the game. There are currently ` + data.length + ' champions.'} />
 
+<div class="flex flex-col p-10">
+	<div class="flex flex-row flex-wrap items-center justify-between gap-4">
+		<div class="w-fit text-4xl font-bold uppercase">
+			Champions
+			<div class="text-2xl font-semibold uppercase">
+				There are {data.length} champions
+			</div>
+		</div>
 
-
-<div class="p-10 flex flex-col">
-
-    <div class="flex flex-row justify-between flex-wrap items-center gap-4">
-
-    <div class="text-4xl font-bold uppercase w-fit">Champions
-        <div class="text-2xl font-semibold uppercase">
-            There are {data.champions.length} champions
-        </div>
-    </div>
-
-        <input
+		<input
         class="input autocomplete w-72 h-12 p-2 smooth"
         type="search"
         placeholder="Search for a champion..."
-        bind:value={$searchStore.search}
-    />
+        bind:value={searchValue}
+    	/>
+	</div>
 
-    </div>
-
-
-    <div class="text-2xl font-bold uppercase h-4"></div>
-    <div class="flex flex-row">
-        <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-        {#each $searchStore.filtered as champion}
-
-            <div on:click={() => {goto(`/champions/${champion.name}`)}}><SkinCard skin={champion} type={"champion"} /></div>
-        
-        {/each}
-
-        </div>
-
-    </div>
+	<div class="h-4 text-2xl font-bold uppercase"></div>
+	<div class="flex flex-row">
+		<div class="flex flex-row flex-wrap justify-center gap-2 lg:gap-3">
+			{#each data as champion}
+				{#if searchValue == '' || champion.name.toLowerCase().replace(" ", "").replace("'", "").includes(searchValue.toLowerCase()) || champion.name.toLowerCase().includes(searchValue.toLowerCase())}
+				<a href="/champions/{champion.name}">
+					<ChampionCard champion={champion} />
+				</a>
+				{/if}
+			{/each}
+		</div>
+	</div>
 </div>
