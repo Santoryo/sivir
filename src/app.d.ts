@@ -18,6 +18,15 @@ declare global {
     }
   }
 
+  interface PBRecord {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    collectionId: string;
+    collectionName: string;
+  }
+
+
   interface Champion {
     id: string;
     championId: number;
@@ -69,6 +78,50 @@ declare global {
     voiceActor: string[];
     model: "";
   }
+
+  interface YourShop extends PBRecord {
+    name: string;
+    startTime: string;
+    endTime: string;
+  }
+
+  interface LoLEvent extends PBRecord {
+    eventId: string;
+    eventName: string;
+    eventType: string;
+    eventStartDate: string;
+    eventEndDate: string;
+    shopEndDate: string;
+    shopOffers: LoLShopOffer[];
+    eventIcon: string;
+    eventTokenImage: string;
+    helpModalImagePath: string;
+}
+
+interface OfferItem {
+  inventoryType: "CHAMPION_SKIN" | "SUMMONER_ICON" | "HEXTECH_CRAFTING";
+  itemId: string;
+  price: number;
+  quantity: number;
+}
+
+interface Offer {
+  highlighted: boolean;
+  id: string;
+  image: string;
+  items: OfferItem[];
+  localizedDescription: string;
+  localizedTitle: string;
+  maxQuantity: number;
+  offerState: "kAvailable" | "kUnavailable";
+  price: number;
+}
+
+interface LoLShopOffer {
+  category: string;
+  categoryIconPath: string;
+  offers: Offer[];
+}
 
 
 }

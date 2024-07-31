@@ -1,13 +1,14 @@
-<script>
-// @ts-nocheck
+<script lang="ts">
 
     import { goto } from "$app/navigation";
-    import { currentUser } from "$lib/pocketbase";
+    import { currentUser, pb } from "$lib/pocketbase";
     import {page} from '$app/stores'
 
 // @ts-nocheck
 
     import { getDrawerStore } from "@skeletonlabs/skeleton";
+	import { onMount } from "svelte";
+	import moment from "moment";
 
     const drawerStore = getDrawerStore();
 
@@ -19,7 +20,13 @@
         goto(link)
     }
 
-    console.log()
+    let currEvent: LoLEvent;
+
+    onMount(async () => {
+        const temp = await fetch('/api/event/');
+        currEvent = await temp.json();
+    });
+
     </script>
 
 
@@ -31,6 +38,9 @@
         <a href="/skinlines" on:click={() => drawerClose("/skinlines")} class:bg-primary-active-token={$page.url.pathname == "/skinlines"}><i class='nav-icon' style='background-image: url("/skins.webp")'></i> SKINLINES</a>
         <a href="/stats" on:click={() => drawerClose("/stats")} class:bg-primary-active-token={$page.url.pathname == "/stats"}><i class='nav-icon' style='background-image: url("/lol/stats.webp")'></i> STATS</a>
         <a href="/discord" on:click={() => drawerClose("/discord")} class:bg-primary-active-token={$page.url.pathname == "/discord"}><i class='nav-icon' style='background-image: url("/bot.png")'></i> DISCORD BOT</a>
+        {#if currEvent && moment(currEvent.eventEndDate).diff(moment()) > 0}
+        <a href="/event-shop" on:click={() => drawerClose("/event-shop")} class:bg-secondary-active-token={$page.url.pathname == "/event-shop"}><i class='nav-icon' style='background-image: url("//wsrv.nl/?url={pb.files.getUrl(currEvent, currEvent.eventIcon)}")'></i>{currEvent.eventName}</a>
+        {/if}
 
         <div class="mt-auto"><a href="/account" on:click={() => drawerClose("/account")} class:bg-primary-active-token={$page.url.pathname == "/account"}>
         {#if $currentUser}
