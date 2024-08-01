@@ -10,6 +10,6 @@
         <div class="inline-block h-[15px] w-[15px] bg-cover bg-center shadow-lg" style="background-image: url('/lol/BE.png')"></div>
         <span class="pr-2">{champion.price.blueEssence}</span>
         <div class="inline-block h-[15px] w-[15px] bg-cover bg-center shadow-lg" style="background-image: url('/lol/RP.webp')"></div>
-        {champion.championId}
+        {champion.price.rp}
     </span>
 </div>

@@ -12,7 +12,7 @@
 	let searchValue: string = '';
 
 	onMount(async () => {
-		const temp = await fetch('/api/champions/none/championId,tilePath,price,name');
+		const temp = await fetch('/api/champions/none/championId,price,name,tilePath');
 		data = await temp.json();
 	});
 </script>
