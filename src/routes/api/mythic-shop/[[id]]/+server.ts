@@ -6,19 +6,22 @@ export async function GET({ setHeaders, params }) {
     try {
 
         let options: any = {sort: '-created'}
-        if(params.eventId)
+        if(params.id)
         {
-            options = {...options, filter: `eventId="${params.eventId}"`}
+            options = {...options, filter: `patch="${params.id}"`}
         }
 
-        const data = await pb.collection('events').getFullList(options);
+        const data = await pb.collection('mythicshop').getFullList(options);
+        const patch = data[0].patch;
 
         setHeaders({
             'Cache-Control': 'public, max-age=8640',
             'Content-Type': 'application/json',
         })
 
-        return json(data[0]);
+        const response = data.filter((item) => item.patch === patch);
+
+        return json(response);
     }
     catch (error) {
         return json({});
