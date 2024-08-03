@@ -12,7 +12,7 @@
 	let searchValue: string = '';
 
 	onMount(async () => {
-		const temp = await fetch('/api/champions/none/championId,price,name,tilePath');
+		const temp = await fetch('/api/champions/none/championId,price,name,tilePath,key');
 		data = await temp.json();
 	});
 </script>
@@ -41,7 +41,7 @@
 		<div class="flex flex-row flex-wrap justify-center gap-2 lg:gap-3">
 			{#each data as champion}
 				{#if searchValue == '' || champion.name.toLowerCase().replace(" ", "").replace("'", "").includes(searchValue.toLowerCase()) || champion.name.toLowerCase().includes(searchValue.toLowerCase())}
-				<a href="/champions/{champion.name}">
+				<a href="/champions/{champion.key}">
 					<ChampionCard champion={champion} />
 				</a>
 				{/if}

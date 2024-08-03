@@ -22,7 +22,7 @@
     }
 
 	onMount(async () => {
-		const temp = await fetch(`/api/champions/name='${$page.params.id}'`);
+		const temp = await fetch(`/api/champions/key='${$page.params.id}'`);
 		const data = await temp.json();
 		champion = data[0];
 	});

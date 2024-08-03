@@ -20,14 +20,14 @@ declare global {
 
   interface PBRecord {
     id: string;
-    createdAt: string;
-    updatedAt: string;
+    created: string;
+    updated: string;
     collectionId: string;
     collectionName: string;
   }
 
 
-  interface Champion {
+  interface Champion extends PBRecord {
     id: string;
     championId: number;
     key: string;
