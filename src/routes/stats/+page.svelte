@@ -6,14 +6,8 @@ import {pb} from "$lib/pocketbase";
 
     export let data;
 
-    let list: any = [];
-
-onMount(async () => {
-    list = await pb.collection("ranking").getFullList({expand: "skin"});
-    console.log(list)
-})
-
-let tabSet: number = 0;
+    let list: any = data.list;
+    let tabSet: number = 0;
 
 
 console.log(list)
