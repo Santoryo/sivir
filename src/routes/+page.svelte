@@ -1,25 +1,11 @@
 <script lang="ts">
-
-import emblaCarouselSvelte from 'embla-carousel-svelte'
-import Autoplay from 'embla-carousel-autoplay'
 export let data;
 import Meta from '$lib/Meta.svelte';
 import moment from 'moment';
 import SkinCard from '$lib/SkinCard/SkinCard.svelte';
 import { onMount } from 'svelte';
 import { pb } from '$lib/pocketbase';
-
-
-let emblaApi  
-let options = { loop: true }
-  const onInit = (event) => {    
-	emblaApi = event.detail    
-	console.log(emblaApi.slideNodes()) // Access API  
-}
-
-const autoplayOptions = {delay: 10000}
-
-let plugins = [Autoplay(autoplayOptions)]
+import SkinDataCard from '$lib/components/SkinDataCard/SkinDataCard.svelte';
 
 let yourShop: YourShop;
 let lastEvent: LoLEvent;
@@ -125,16 +111,18 @@ onMount(async () => {
 
 <div class="text-3xl font-bold w-full h-fit py-4 uppercase">NEWEST SKINS</div>
 <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-	{#each data.skins.newest as skin}
-		<a href="/skin/{skin.id}"><SkinCard skin={skin} type="homepage" /></a>
+	{#each data.newestSkins as skin}
+		<a href="/skin/{skin.skinId}"><SkinDataCard skin={skin} /></a>
 	{/each}
 </div>
 
+{#if data.upcomingSkins.length > 0}
 <div class="text-3xl font-bold w-full h-fit py-4 uppercase">UPCOMING SKINS</div>
 <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-	{#each data.skins.upcomingSkins as skin}
-		<a href="/skin/{skin.id}"><SkinCard skin={skin} type="homepage" /></a>
+	{#each data.upcomingSkins as skin}
+		<a href="/skin/{skin.skinId}"><SkinDataCard skin={skin} /></a>
 	{/each}
 </div>
+{/if}
 
 </div>

@@ -3,6 +3,8 @@
     import { goto } from "$app/navigation";
     import { currentUser, pb } from "$lib/pocketbase";
     import {page} from '$app/stores'
+    import gacha from '$lib/assets/gacha.svg';
+    import bp from '$lib/assets/bp.svg';
 
 // @ts-nocheck
 
@@ -44,8 +46,8 @@
         <NavigationElement title={currEvent.eventName} href="/event-shop" iconPath={`//wsrv.nl/?url=${pb.files.getUrl(currEvent, currEvent.eventIcon)}`} />
     {/if}
     <div class="uppercase text-sm opacity-50 font-bold pl-4 py-2">Teamfight Tactics</div>
-    <NavigationElement title="Battle Pass" href="/tft/battlepass" iconPath="" />
-    <NavigationElement title="Treasure Realms" href="/tft/treasure-realms" iconPath="" />
+    <NavigationElement title="Battle Pass" href="/tft/battlepass" iconPath={bp} />
+    <NavigationElement title="Treasure Realms" href="/tft/treasure-realms" iconPath={gacha} />
     <div class="mt-auto">
         <NavigationElement title={$currentUser ? $currentUser.username : "SIGN IN"} href="/account" iconPath="/account.webp" />
     </div>

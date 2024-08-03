@@ -1,10 +1,24 @@
-// @ts-nocheck
-export async function load({ }) {
+import { pb } from '$lib/pocketbase';
+import { ListResult } from 'pocketbase';
+import type { PageServerLoad } from './$types';
 
-    const temp2 = await fetch('https://api.brelshaza.com/v3/data/lol-newest-skins', {headers: {"User-Agent": "Sivir.GG/1.0"}});
-    const skins = await temp2.json();
-    
-    return {skins}
-    
+export const load: PageServerLoad = async ({ }) => {
+    let fetchResult: ListResult<SkinData[]> = await pb.collection('skins4').getList(1, 20, {sort: '-release', expand: 'skin'});
 
-}
+    const newestSkins: SkinData[] = [];
+    const upcomingSkins: SkinData[] = [];
+
+    for(const skin of fetchResult.items)
+    {
+        if(skin.availability == "Upcoming")
+        {
+            upcomingSkins.push(skin);
+        }
+        else if(skin.release == fetchResult.items[0].release)
+        {
+            newestSkins.push(skin);
+        }
+    }
+
+    return {upcomingSkins, newestSkins};
+ }

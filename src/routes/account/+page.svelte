@@ -28,7 +28,7 @@
 	async function login()
 	{
 		await pb.collection('users').authWithOAuth2({provider: 'discord'})
-		//skins = await getWishlist();
+		skins = await getWishlist();
 
 	}
 
@@ -103,11 +103,10 @@
 		<ul class="list">
 				{#each skins as skin}
 				<li class="py-0.5">
-					<a href="/skin/{skin.skinData.id}"><Avatar src={skin.skinData.tilePath.replace("http://", "https://")} width="w-16" rounded="rounded-2xl" /></a>
-					<span class="flex-auto"><a href="/skin/{skin.skinData.id}">{skin.name}</a> <br /><span class="opacity-50 text-sm">Added on {moment(skin.updated).format('DD MMM YYYY')}</span></span>
+					<a href="/skin/{skin.expand.skin.skinId}"><Avatar src="//wsrv.nl/?url={skin.expand.skin.tilePath}" width="w-16" rounded="rounded-2xl" /></a>
+					<span class="flex-auto"><a href="/skin/{skin.expand.skin.skinId}">{skin.expand.skin.skinName}</a> <br /><span class="opacity-50 text-sm">Added on {moment(skin.created).format('DD MMM YYYY')}</span></span>
 					<span class="cursor-pointer select-none font-extrabold" on:click={() => {removeFromList(skin)}}>X</span>
 				</li>
-					
 				{/each}
 		</ul>
 	</section>

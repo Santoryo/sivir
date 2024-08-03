@@ -110,14 +110,14 @@
     
     </script>
 
-    <Meta titleSuffix={name(info.skin)} description={`${info.skin.description}`} image={info.skin.tilePath.replace("http://", "https://")} />
+    <Meta titleSuffix={name(info.skin)} description={`${info.skin.description}`} image="//wsrv.nl/?url={info.skin.tilePath.replace("http://", "https://")}" />
 
     <Toast></Toast>
     
     <div class="p-10 flex flex-row gap-3 flex-wrap justify-left items-start">
     
 
-        <div class='w-full h-full max-w-[288px] max-h-[288px] aspect-square md:h-72 md:w-72 bg-cover relative flex justify-center uppercase font-semibold skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white;' style='background-image: url("{info.skin.tilePath.replace("http://", "https://")}")'>
+        <div class='w-full h-full max-w-[288px] max-h-[288px] aspect-square md:h-72 md:w-72 bg-cover relative flex justify-center uppercase font-semibold skincard rounded-md border border-gray-800 hover:border-gray-600 smooth text-white;' style='background-image: url("//wsrv.nl/?url={info.skin.tilePath.replace("http://", "https://")}")'>
             
         </div>
 

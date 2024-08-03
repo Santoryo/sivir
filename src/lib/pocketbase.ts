@@ -15,8 +15,10 @@ pb.authStore.onChange((auth) => {
 export async function getWishlist() {
 		const resultList: any = await pb.collection('skins').getList(1, 50, {
 			sort: 'created',
-			expand: 'user',
+			expand: 'user, skin',
 		})
+		console.log(resultList.items)
+
 		return resultList.items;
 }
 

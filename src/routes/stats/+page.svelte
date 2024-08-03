@@ -9,7 +9,7 @@ import {pb} from "$lib/pocketbase";
     let list: any = [];
 
 onMount(async () => {
-    list = await pb.collection("ranking").getFullList();
+    list = await pb.collection("ranking").getFullList({expand: "skin"});
     console.log(list)
 })
 
@@ -28,8 +28,8 @@ console.log(list)
         {#each list as skin (skin)}
         <li class="py-0.5 hover:bg-primary">
             <span class="p-2 h-10 w-10 text-center">{list.indexOf(skin) + 1}</span>
-            <a href="/skin/{skin.skinData.id}"><Avatar src="//wsrv.nl/?url=raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/assets/characters/{skin.skinData.championName.replace("'", "").replace(" ", "").toLowerCase()}/skins/skin{skin.skinData.id.toString().slice(-2)}/images/{skin.skinData.championName.replace("'", "").replace(" ", "").toLowerCase()}_splash_tile_{skin.skinData.id.toString().slice(-2)}.jpg" width="w-16" rounded="rounded-2xl" /></a>
-            <span class="flex-auto"><a href="/skin/{skin.skinData.id}">{skin.id}</a> <br /><span class="opacity-50 text-sm">Wishlisted {skin.total}x times</span></span>
+            <a href="/skin/{skin.expand.skin.skinId}"><Avatar src="//wsrv.nl/?url={skin.expand.skin.tilePath}" width="w-16" rounded="rounded-2xl" /></a>
+            <span class="flex-auto"><a href="/skin/{skin.expand.skin.skinId}">{skin.id}</a> <br /><span class="opacity-50 text-sm">Wishlisted {skin.total}x times</span></span>
         </li>
             
         {/each}
