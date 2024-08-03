@@ -1,5 +1,5 @@
 import { pb } from '$lib/pocketbase'
-
+import moment from 'moment';
 export async function GET() {
 
     let xml = `
@@ -82,7 +82,7 @@ export async function GET() {
         urlelements += `
         <url>
             <loc>https://sivir.gg/champions/${encodeURIComponent(champion.name)}</loc>
-            <lastmod>${champion.updated}</lastmod>
+            <lastmod>${moment(champion.updated).format("YYYY-MM-DD")}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
         </url>
