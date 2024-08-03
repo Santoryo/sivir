@@ -39,13 +39,13 @@ console.log(list)
     <section class="w-full md:w-1/4 text-token card p-4 space-y-4 h-[788px]">
 		<p class="font-bold pb-4 uppercase">HISTORICAL ROTATIONS <span class="opacity-50 font-regular">(weekly)</span>
             <br> <span class="opacity-50 font-regular text-xs">Data collected since 20 February 2023</span></p>
-        <div class="flex flex-col w-full items-center h-[680px] overflow-y-auto">
+        <div class="flex flex-col w-full items-left h-[680px] overflow-y-auto">
 
-        {#each data.sales as sale}
-        {#if data.sales.indexOf(sale) == 0}
-        <a href="/sale-rotation" class="py-0.5 hover:scale-105 smooth bg-"><div class="flex flex-row uppercase font-bold"><div class="w-[70px] text-right pr-2">NOW</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
+        {#each data.saleRotations as sale}
+        {#if data.saleRotations.indexOf(sale) == 0}
+        <a href="/sale-rotation/" class="font-bold uppercase">{moment(sale.startDate).format('D MMM Y')} — {moment(sale.endDate).format('D MMM Y')} (CURRENT)</a>
         {:else}
-        <a href="/sale-rotation/{sale._id}" class="py-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase"><div class="w-[70px] text-right pr-2">{moment(sale.skins[0].dates.startDate).format('D MMM')}</div> — <div class="w-[105px] text-left pl-2">{moment(sale.skins[0].dates.endDate).format('D MMM Y')}</div></div></a>
+        <a href="/sale-rotation/{sale.id}" class="uppercase">{moment(sale.startDate).format('D MMM Y')} — {moment(sale.endDate).format('D MMM Y')}</a>
         {/if}
         {/each}
         </div>
@@ -56,11 +56,11 @@ console.log(list)
             <br> <span class="opacity-50 font-regular text-xs">Data collected since 13.17</span></p>
         <div class="flex flex-col w-full items-center h-[680px] overflow-y-auto">
 
-        {#each data.mythics as mythic}
-        {#if data.mythics.indexOf(mythic) == 0}
-        <a href="/mythic-shop/" class="p-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase font-bold">{mythic.version.slice(0, -2)} (CURRENT)</div></a>
+        {#each data.mythicShops as mythic}
+        {#if data.mythicShops.indexOf(mythic) == 0}
+        <a href="/mythic-shop/" class=""><div class="flex flex-row uppercase font-bold">{mythic.id} (CURRENT)</div></a>
         {:else}
-        <a href="/mythic-shop/{mythic._id}" class="py-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase">{mythic.version.slice(0, -2)}</div></a>
+        <a href="/mythic-shop/{mythic.id}" class="py-0.5 hover:scale-105 smooth"><div class="flex flex-row uppercase">{mythic.id}</div></a>
         {/if}
         {/each}
         </div>

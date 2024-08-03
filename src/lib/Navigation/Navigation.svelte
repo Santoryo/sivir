@@ -9,6 +9,7 @@
     import { getDrawerStore } from "@skeletonlabs/skeleton";
 	import { onMount } from "svelte";
 	import moment from "moment";
+	import NavigationElement from "./NavigationElement.svelte";
 
     const drawerStore = getDrawerStore();
 
@@ -30,24 +31,22 @@
     </script>
 
 
-<nav class="list-nav p-4 font-semibold uppercase flex flex-col h-full" data-sveltekit-preload-data="hover">
-        <a href="/" on:click={() => drawerClose("/")} class:bg-primary-active-token={$page.url.pathname == "/"}><i class='nav-icon' style='background-image: url("/home.png")'></i> home</a>
-        <a href="/sale-rotation" on:click={() => drawerClose("/sale-rotation")} class:bg-primary-active-token={$page.url.pathname == "/sale-rotation"}><i class='nav-icon' style='background-image: url("/lol/RP.webp")'></i> SALE ROTATION</a>
-        <a href="/mythic-shop" on:click={() => drawerClose("/mythic-shop")} class:bg-primary-active-token={$page.url.pathname == "/mythic-shop"}><i class='nav-icon' style='background-image: url("/lol/ME.webp")'></i> MYTHIC SHOP</a>
-        <a href="/champions" on:click={() => drawerClose("/champions")} class:bg-primary-active-token={$page.url.pathname == "/champions"}><i class='nav-icon' style='background-image: url("/champions.png")'></i> CHAMPIONS</a>
-        <a href="/skinlines" on:click={() => drawerClose("/skinlines")} class:bg-primary-active-token={$page.url.pathname == "/skinlines"}><i class='nav-icon' style='background-image: url("/skins.webp")'></i> SKINLINES</a>
-        <a href="/stats" on:click={() => drawerClose("/stats")} class:bg-primary-active-token={$page.url.pathname == "/stats"}><i class='nav-icon' style='background-image: url("/lol/stats.webp")'></i> STATS</a>
-        <a href="/discord" on:click={() => drawerClose("/discord")} class:bg-primary-active-token={$page.url.pathname == "/discord"}><i class='nav-icon' style='background-image: url("/bot.png")'></i> DISCORD BOT</a>
-        {#if currEvent && moment(currEvent.eventEndDate).diff(moment()) > 0}
-        <a href="/event-shop" on:click={() => drawerClose("/event-shop")} class:bg-secondary-active-token={$page.url.pathname == "/event-shop"}><i class='nav-icon' style='background-image: url("//wsrv.nl/?url={pb.files.getUrl(currEvent, currEvent.eventIcon)}")'></i>{currEvent.eventName}</a>
-        {/if}
-
-        <div class="mt-auto"><a href="/account" on:click={() => drawerClose("/account")} class:bg-primary-active-token={$page.url.pathname == "/account"}>
-        {#if $currentUser}
-        <i class='nav-icon' style='background-image: url("/account.webp")'></i>{$currentUser?.username}
-        {:else}
-        <i class='nav-icon' style='background-image: url("/account.webp")'></i>SIGN IN
-        {/if}
-        
-        </a></div>
+<nav class="list-nav p-4 font-semibold uppercase flex flex-col h-full gap-1" data-sveltekit-preload-data="hover">
+    <NavigationElement title="Home" href="/" iconPath="/home.png" />
+    <NavigationElement title="STATS" href="/stats" iconPath="/lol/stats.webp" />
+    <NavigationElement title="DISCORD BOT" href="/discord" iconPath="/bot.png" />
+    <div class="uppercase text-sm opacity-50 font-bold pl-4 py-2">League of Legends</div>
+    <NavigationElement title="SALE ROTATION" href="/sale-rotation" iconPath="/lol/RP.webp" />
+    <NavigationElement title="MYTHIC SHOP" href="/mythic-shop" iconPath="/lol/ME.webp" />
+    <NavigationElement title="CHAMPIONS" href="/champions" iconPath="/champions.png" />
+    <NavigationElement title="SKINLINES" href="/skinlines" iconPath="/skins.webp" />
+    {#if currEvent && moment(currEvent.eventEndDate).diff(moment()) > 0}
+        <NavigationElement title={currEvent.eventName} href="/event-shop" iconPath={`//wsrv.nl/?url=${pb.files.getUrl(currEvent, currEvent.eventIcon)}`} />
+    {/if}
+    <div class="uppercase text-sm opacity-50 font-bold pl-4 py-2">Teamfight Tactics</div>
+    <NavigationElement title="Battle Pass" href="/tft/battlepass" iconPath="" />
+    <NavigationElement title="Treasure Realms" href="/tft/treasure-realms" iconPath="" />
+    <div class="mt-auto">
+        <NavigationElement title={$currentUser ? $currentUser.username : "SIGN IN"} href="/account" iconPath="/account.webp" />
+    </div>
 </nav>

@@ -46,14 +46,14 @@ onMount(async () => {
 
 </script>
 
-<Meta titleSuffix="Home" description={`Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more.`} />
+<Meta titleSuffix="Home" description={`Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.`} />
 
 
 <div class="p-10 mx-auto">
 
-	<div class="text-4xl font-bold uppercase">Welcome</div>
-	<div class="text-2xl font-semibold uppercase">
-		Sivir.GG - Your ultimate League of Legends companion for mythic shop updates, shop sale rotations, cosmetics, and more 
+	<div class="text-3xl font-bold uppercase">Welcome to Sivir.GG!</div>
+	<div class="text-xl font-semibold w-full flex">
+		<div class="">Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.</div>
 	</div>
 	<div class="text-2xl font-bold uppercase h-4"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->

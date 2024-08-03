@@ -76,7 +76,8 @@ declare global {
     newVoice: boolean;
     newQuotes: boolean;
     voiceActor: string[];
-    model: "";
+    skinName: string;
+    championName: string;
   }
 
   interface YourShop extends PBRecord {
@@ -123,5 +124,76 @@ interface LoLShopOffer {
   offers: Offer[];
 }
 
+interface MythicShopItem extends PBRecord {
+  category: string;
+  id: string;
+  imagePath: string;
+  patch: string;
+  price: number;
+  skin: string;
+  expand?: {skins: SkinData} | null;
+}
+
+interface SaleRotationItem extends PBRecord {
+  endDate: string;
+  expand?: {skins: SkinData};
+  percentage: number;
+  price: number;
+  saleId: string;
+  skin: string;
+  startDate: string;
+}
+
+interface TreasureRealm extends PBRecord {
+bannerId: string;
+name: string;
+description: string;
+image: string;
+startDate: string;
+endDate: string;
+}
+
+interface TFTBattlepass extends PBRecord {
+  passId: string;
+  name: string;
+  premiumName: string;
+  startDate: string;
+  endDate: string;
+  rewards: TFTBattlepassReward[];
+  backgrounds:TFTBattlepassBackgrounds;
+}
+
+interface TFTBattlepassBackgrounds {
+  "background--battlepass": string;
+  "background--battlepass-completion": string;
+  "background--battlepass-reward-celebration": string;
+  "background--battlepass-unavailable": string;
+  "background--eog": string;
+  "background--season-start-modal": string;
+  "home-footer-bg": string;
+}
+
+  interface TFTBattlepassReward {
+    milestoneId: string
+    title: string
+    description: string
+    status: string
+    /** @format int32 */
+    pointsNeededForMilestone: number
+    /** @format int32 */
+    pointsEarnedForMilestone: number
+    /** @format int32 */
+    totalPointsForMilestone: number
+    /** @format int32 */
+    level: number
+    iconImageUrl: string
+    iconNeedsFrame: boolean
+    rewards: LolTftPassTftBattlepassReward[]
+    isPaid: boolean
+    isLocked: boolean
+    isKeystone: boolean
+    isBonus: boolean
+    isClaimRequestPending: boolean
+  }
 
 }

@@ -1,12 +1,11 @@
-// @ts-nocheck
-export async function load({ }) {
+import type { PageServerLoad } from './$types';
 
-    const temp = await fetch('https://api.brelshaza.com/v3/data/lol-sale');
-    const skins = await temp.json();
-    
-    return {
-        data: skins
-    }
-    
+export const load: PageServerLoad = async ({ params, fetch }) => {
+    const filter = params.id ? `/${params.id}` : '';
+    let fetchResult = await fetch('/api/sale-rotation' + filter);
+    let data: SaleRotationItem[] = await fetchResult.json();
 
-}
+    data.sort((a, b) => a.price - b.price);
+
+    return {saleRotation: data};
+ }

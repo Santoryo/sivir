@@ -1,0 +1,1 @@
+This Mytnic Shop doesn't exist

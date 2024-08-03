@@ -1,10 +1,13 @@
+import { pb } from '$lib/pocketbase';
+
+
 // @ts-nocheck
 export async function load({ }) {
 
-    const temp = await fetch('https://api.brelshaza.com/v3/data/lol-historical');
-    const historical = await temp.json();
-    
-    return historical
+    const saleRotations = await pb.collection('saleRotations').getFullList({sort: '-startDate'});
+    const mythicShops = await pb.collection('mythicRotations').getFullList({sort: '-created'});
+
+    return {saleRotations, mythicShops}
     
 
 }

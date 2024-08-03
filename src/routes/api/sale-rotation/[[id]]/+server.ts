@@ -8,22 +8,25 @@ export async function GET({ setHeaders, params }) {
         let options: any = {sort: '-created', expand: "skin"};
         if(params.id)
         {
-            options = {...options, filter: `patch="${params.id}"`}
+            options = {...options, filter: `saleId="${params.id}"`}
+        }
+        else
+        {
+            const saleId = await pb.collection('saleRotations').getFullList({sort: '-startDate', limit: 1});
+            options = {...options, filter: `saleId="${saleId[0].id}"`}
         }
 
-        const data = await pb.collection('mythicshop').getFullList(options);
-        const patch = data[0].patch;
+        const response = await pb.collection('saleRotationItems').getFullList(options);
 
         setHeaders({
             'Cache-Control': 'public, max-age=3600',
             'Content-Type': 'application/json',
         })
 
-        const response = data.filter((item) => item.patch === patch);
-
         return json(response);
     }
     catch (error) {
+        console.error(error);
         return json({});
     }
 }

@@ -7,6 +7,7 @@
 	import { goto } from '$app/navigation';
 	import Meta from '$lib/Meta.svelte';
 	import { page } from '$app/stores';
+	import SkinDataCard from '$lib/components/SkinDataCard/SkinDataCard.svelte';
 
 	let champion: Champion;
 
@@ -47,40 +48,7 @@
 		<div class="flex flex-row">
 			<div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
 				{#each champion.expand.skins as skin}
-					<a href="/skin/{skin.skinId}">
-						{#if !skin.isBase}
-							<div class="frame" style="background-image: url('//wsrv.nl/?url={skin.tilePath}')">
-								{#if skin.cost == 0}
-									<span class="absolute bottom-0 skincardinfo text-center">
-										{#if skin.rarity != 'NoRarity'}<div class="small-icon" style="background-image: url('/lol/{skin.rarity}.webp')"></div>{/if}
-										{name(skin)}
-										<br />
-										{#if skin.distribution.includes('Mythic Essence')}
-											<div class="small-icon" style="background-image: url('/lol/ME.webp')"></div>
-											{skin.distribution.replace('Mythic Essence', '')}
-										{:else}
-											{skin.distribution}
-										{/if}
-									</span>
-								{:else if skin.rarity != 'NoRarity' && skin.price != 'Special'}
-									<span class="absolute bottom-0 skincardinfo text-center">
-										<div class="small-icon" style="background-image: url('/lol/{skin.rarity}.webp')"></div>
-										{name(skin)}
-										<br />
-										<div class="small-icon" style="background-image: url('/lol/RP.webp')"></div>
-										{skin.cost}
-									</span>
-								{:else if skin.rarity == 'NoRarity' && skin.price != 'Special'}
-									<span class="absolute bottom-0 skincardinfo text-center">
-										{name(skin)}
-										<br />
-										<div class="small-icon" style="background-image: url('/lol/RP.webp')"></div>
-										{skin.cost}
-									</span>
-								{/if}
-							</div>
-						{/if}
-					</a>
+					<SkinDataCard skin={skin} />
 				{/each}
 			</div>
 		</div>
