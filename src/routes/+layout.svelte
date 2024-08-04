@@ -42,8 +42,14 @@
 			</svelte:fragment>
 			
 			<svelte:fragment slot="trail">
-
-			<LightSwitch />
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="https://discord.gg/P4KNGxeeFa"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Twitter
+				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://twitter.com/SivirGG"
@@ -52,7 +58,7 @@
 				>
 					Twitter
 				</a>
-
+				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
