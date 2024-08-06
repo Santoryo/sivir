@@ -27,7 +27,7 @@
             <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
             {#each skins as skin}
 
-                <SkinDataCard skin={skin.expand.skin} />
+                <SkinDataCard skin={skin.expand.skin} sale={true} saleInfo={skin} />
             
             {/each}
 
