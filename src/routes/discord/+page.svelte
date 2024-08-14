@@ -4,7 +4,7 @@
 <div class='p-10'>
     <div class="text-4xl font-bold uppercase">Upgrade your expierence</div>
 	<div class="text-2xl font-semibold uppercase">
-		Blitz & Crank bot - get notifications about wishlisted skins whenever they go on sale or get featured in Mythic Shop
+		Blitz & Crank bot - Enhance your League of Legends Discord server expierence!
 	</div>
     
     <div class="flex flex-row w-full mt-10 justify-center lg:justify-start flex-wrap">
@@ -14,7 +14,7 @@
         <span class="break-normal w-fit text-lg">Blitz & Crank is the ultimate companion for League of Legends skins. <br>
             — Get notifications whenever your wishlisted skin goes on sale or gets featured in Mythic Shop directly in your DMs! <br>
             — Server notifications for Mythic Shop Rotations, Weekly Sales Rotation & Game Updates News <br>
-            — Manage your wishlist directly in Discord app without logging to Sivir.GG (still requires Sivir.GG account) <br>
+            — Manage your wishlist directly in Discord app without logging to Sivir.GG <br>
             — Check the skin informations, popularity, price etc. <br>
             & more coming soon!
         </span>
@@ -27,7 +27,6 @@
         </span>
 
     </div>
-    <div class="aspect-square w-[300px] bg-cover bg-center rounded-xl place-self-start" style="background-image: url('./tile2.jpg')"></div>
 
     </div>
     

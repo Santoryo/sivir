@@ -16,7 +16,7 @@ console.log(list)
 
 <div class="p-10 flex flex-row flex-shrink-0 flex-wrap gap-3 justify-center">
 
-	<section class="w-full md:w-1/4 text-token card p-4 space-y-4 h-[788px]">
+	<section class="w-full md:w-1/4 text-token card p-4 space-y-4 h-fit">
 		<p class="font-bold">TOP 10 WISHLISTED SKINS</p>
 		<ul class="list">
         {#each list as skin (skin)}
@@ -33,7 +33,7 @@ console.log(list)
     <section class="w-full md:w-1/4 text-token card p-4 space-y-4 h-[788px]">
 		<p class="font-bold pb-4 uppercase">HISTORICAL ROTATIONS <span class="opacity-50 font-regular">(weekly)</span>
             <br> <span class="opacity-50 font-regular text-xs">Data collected since 20 February 2023</span></p>
-        <div class="flex flex-col w-full items-left h-[680px] overflow-y-auto">
+        <div class="flex flex-col w-full items-left h-[680px] overflow-y-auto gap-1">
 
         {#each data.saleRotations as sale}
         {#if data.saleRotations.indexOf(sale) == 0}
