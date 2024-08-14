@@ -24,7 +24,7 @@
     }
 </script>
 
-<Meta titleSuffix={champion.name} description={`${champion.name}, ${champion.title} - ${champion.lore}`} keywords="League of Legends {champion.name}, {champion.title}, lol {champion.name}" />
+<Meta titleSuffix={champion.name} description={`${champion.name}, ${champion.title} - ${champion.lore}`} image={champion.tilePath} keywords="League of Legends {champion.name}, {champion.title}, lol {champion.name}" />
 
 <svelte:head>
 	<meta property="article:published_time" content={champion.created} />

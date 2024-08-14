@@ -11,6 +11,10 @@
 
 <Meta titleSuffix="Treasure Realms" description="Treasure Realms is a gacha system in Teamfight Tactics where you can win Tacticians and Arena Skins. Treasure Realms are similar to other gachas 'banners' rotations." />
 
+<svelte:head>
+    <meta property="article:published_time" content={treasureRealms[0].startDate} />
+</svelte:head>
+
 <div class="p-10 flex flex-col items-left lg:items-left">
     <div class="text-4xl font-bold uppercase w-fit">
          Current Treasure Realms

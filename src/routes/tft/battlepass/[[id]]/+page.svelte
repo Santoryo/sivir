@@ -54,7 +54,12 @@
     }
 </script>
 
-<Meta titleSuffix="Treasure Realms" description="Treasure Realms is a gacha system in Teamfight Tactics where you can win Tacticians and Arena Skins. Treasure Realms are similar to other gachas 'banners' rotations." />
+<Meta titleSuffix="Battle Pass" description="A look at all the things TFT players can earn from the {battlepass.premiumName} Battle Pass including new arenas, Little Legends and more" />
+
+<svelte:head>
+    <meta property="article:published_time" content={battlepass.startDate} />
+</svelte:head>
+
 
 <div class="w-full h-full absolute bg-cover opacity-5" style="background-image: url('{battlepass.backgrounds['background--battlepass-completion']}')"></div>
 

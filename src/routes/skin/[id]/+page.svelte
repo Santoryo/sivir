@@ -84,7 +84,7 @@
 
 </script>
 
-<Meta titleSuffix={info.skinName} description={`Cost: ${info.cost} ${info.lore}`} image="//wsrv.nl/?url={info.tilePath}" />
+<Meta titleSuffix={info.skinName} description={`Cost: ${info.cost} ${info.lore}`} image="//wsrv.nl/?url={info.tilePath}" keywords="{info.championName} skins, {info.set.length > 0 ? info.set[0] : ""}" />
 
 <svelte:head>
     <meta property="article:published_time" content="{info.release}" />
