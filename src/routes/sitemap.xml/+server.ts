@@ -94,7 +94,7 @@ export async function GET() {
     for(const skin of skins) {
         urlelements += `
         <url>
-            <loc>https://sivir.gg/skins/${encodeURIComponent(skin.skinName.replaceAll(" ", "-"))}</loc>
+            <loc>https://sivir.gg/skin/${encodeURIComponent(skin.skinName.replaceAll(" ", "-"))}</loc>
             <lastmod>${moment(skin.updated).format("YYYY-MM-DD")}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.4</priority>
