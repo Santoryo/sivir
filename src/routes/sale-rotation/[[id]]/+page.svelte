@@ -12,8 +12,12 @@
 
     </script>
 
-    <Meta titleSuffix="Sale Rotation" description={`${moment(skins[0].startDate).format('MMM Do')} - ${moment(skins[0].endDate).format('MMM Do')} Sale Rotation`} />
+    <Meta titleSuffix="LoL Skin Sale: {moment(skins[0].startDate).format('MMM Do')} - {moment(skins[0].endDate).format('MMM Do')}" description={`League of Legends weekly skin sale rotation. ${moment(skins[0].startDate).format('MMM Do')} - ${moment(skins[0].endDate).format('MMM Do')} Sale Rotation. Check out discounts for your favorite league skins. Every week, 15 different skins are put on sale, ranging in value, rarity and discount.`} keywords="lol skin sale, league of legends sale, league skins, lol sale rotation" />
     
+    <svelte:head>
+        <meta property="article:published_time" content="{skins[0].startDate}">
+    </svelte:head>
+
     <div class="p-10 flex flex-col" id="container">
     
 

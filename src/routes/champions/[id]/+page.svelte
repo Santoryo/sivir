@@ -9,7 +9,8 @@
 	import { page } from '$app/stores';
 	import SkinDataCard from '$lib/components/SkinDataCard/SkinDataCard.svelte';
 
-	let champion: Champion;
+	export let data: Champion;
+	let champion: Champion = data;
 
     function name(skinInfo: SkinData) {
     if(skinInfo.formatName == skinInfo.name)
@@ -21,16 +22,15 @@
             return skinInfo.formatName
         }
     }
-
-	onMount(async () => {
-		const temp = await fetch(`/api/champions/key~'${$page.params.id}'||name~'${$page.params.id}'`);
-		const data = await temp.json();
-		champion = data[0];
-	});
 </script>
 
+<Meta titleSuffix={champion.name} description={`${champion.name}, ${champion.title} - ${champion.lore}`} keywords="League of Legends {champion.name}, {champion.title}, lol {champion.name}" />
+
+<svelte:head>
+	<meta property="article:published_time" content={champion.created} />
+</svelte:head>
+
 {#if champion}
-	<Meta titleSuffix={champion.name} description={`${champion.name}, ${champion.title}`} />
 
 	<div class="p-10 flex flex-col">
 		<div class="flex flex-row justify-between flex-wrap items-center gap-4">

@@ -6,7 +6,8 @@
 	export let path = $page.url.pathname;
 	export let domain = 'https://sivir.gg/';
 	export let titleSuffix = '';
-	const titleWithSuffix = (titleSuffix === title) ? title : `${title} | ${titleSuffix}`;
+	export let keywords = '';
+	const titleWithSuffix = (titleSuffix === title) ? title : `${titleSuffix} | ${title}`;
 	const fullURI = `${domain}${path}`;
 </script>
 
@@ -16,6 +17,7 @@
 	<meta name="title" content={titleWithSuffix} />
 	<meta name="description" content={description} />
 	<meta name="theme-color" content="#FF3D3D">
+	<meta name="keywords" content={keywords}>
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />

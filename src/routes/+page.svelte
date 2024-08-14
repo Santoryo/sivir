@@ -32,7 +32,7 @@ onMount(async () => {
 
 </script>
 
-<Meta titleSuffix="Home" description={`Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.`} />
+<Meta titleSuffix="Home" description={`Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.`} keywords="league of legends skins, league of legends chromas, new lol skins, lol skins" />
 
 
 <div class="p-10 mx-auto">

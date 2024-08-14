@@ -16,7 +16,11 @@
 
     </script>
 
-    <Meta titleSuffix="Mythic Shop Rotation" description={"Mythic Shop Rotation for Patch "} />
+<Meta titleSuffix="LoL Mythic Shop: {skins[0].patch}" description={`League of Legends Mythic Shop rotation for patch ${skins[0].patch}. Check out Mythic Shop rotation for prestige League skins for your favorite champions where you can exchange Mythic Essence into exclusive, valuable skins`} keywords="lol mythic shop, league of legends mythic shop rotation, league skins, lol mythic shop" />
+    
+    <svelte:head>
+        <meta property="article:published_time" content="{skins[0].created}">
+    </svelte:head>
     
     <div class="p-10 flex flex-col items-left lg:items-left" id="container">
         <div class="text-4xl font-bold uppercase w-fit">
