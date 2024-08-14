@@ -19,6 +19,8 @@ export async function GET() {
     const champions: Champion[] = await pb.collection('champions4').getFullList();
     let urlelements = "";
 
+    const skins: Skin[] = await pb.collection('skins4').getFullList({fields: "skinName,updated"});
+
     urlelements += `
     <url>
         <loc>https://sivir.gg/</loc>
@@ -81,10 +83,21 @@ export async function GET() {
     for(const champion of champions) {
         urlelements += `
         <url>
-            <loc>https://sivir.gg/champions/${encodeURIComponent(champion.name)}</loc>
+            <loc>https://sivir.gg/champions/${encodeURIComponent(champion.key)}</loc>
             <lastmod>${moment(champion.updated).format("YYYY-MM-DD")}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.5</priority>
+        </url>
+        `
+    }
+
+    for(const skin of skins) {
+        urlelements += `
+        <url>
+            <loc>https://sivir.gg/skins/${encodeURIComponent(skin.skinName.replaceAll(" ", "-"))}</loc>
+            <lastmod>${moment(skin.updated).format("YYYY-MM-DD")}</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.4</priority>
         </url>
         `
     }
