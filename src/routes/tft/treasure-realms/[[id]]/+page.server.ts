@@ -1,7 +1,10 @@
-import { pb } from '$lib/pocketbase';
+import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
 
 // @ts-nocheck
 export async function load({ }) {
+
+    const pb = new PocketBase(PUBLIC_POCKETBASE);
 
     const data: TreasureRealm[] = await pb.collection('treasureRealms').getFullList({sort: '-startDate'});
 

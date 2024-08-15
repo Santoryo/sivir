@@ -1,4 +1,5 @@
-import { pb } from '$lib/pocketbase.js';
+import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
 
 export async function load({params}) {
 
@@ -10,6 +11,8 @@ export async function load({params}) {
 async function init(skinID: string) {
     // const response = await fetch(`https://api.brelshaza.com/v3/data/lol-skin/${skinID}`, {method: 'GET'})
     // let skin = await response.json();
+
+    const pb = new PocketBase(PUBLIC_POCKETBASE);
 
     // if(skin.version.res.length > 0) skin.version.res.reverse();
     const skin = await pb.collection('skins4').getFirstListItem(`skinId="${skinID}" || skinName="${skinID.toString().replace(/-/g, ' ')}"`);

@@ -1,9 +1,10 @@
-import { pb } from '$lib/pocketbase';
 import { json } from '@sveltejs/kit';
 import { RecordModel } from 'pocketbase';
-
+import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
 export async function GET({ setHeaders, params }) {
     try {
+        const pb = new PocketBase(PUBLIC_POCKETBASE);
 
         let options: any = {sort: '-created', expand: "skin"};
         if(params.id)

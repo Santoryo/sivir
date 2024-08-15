@@ -1,8 +1,10 @@
-import { pb } from '$lib/pocketbase';
-
+import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
 
 // @ts-nocheck
 export async function load({ }) {
+
+    const pb = new PocketBase(PUBLIC_POCKETBASE);
 
     const saleRotations = await pb.collection('saleRotations').getFullList({sort: '-startDate'});
     const mythicShops = await pb.collection('mythicRotations').getFullList({sort: '-created'});

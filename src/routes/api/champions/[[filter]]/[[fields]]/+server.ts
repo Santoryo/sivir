@@ -1,11 +1,12 @@
-import { pb } from '$lib/pocketbase';
+import PocketBase from 'pocketbase';
 import { json } from '@sveltejs/kit';
-import { RecordModel } from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
 
 export async function GET({ setHeaders, params }) {
     try {
         // const temp = await fetch('https://data.brelshaza.com/api/collections/champions4/records?page=1&perPage=999&' + filter)
         // const data = await temp.json();
+        const pb = new PocketBase(PUBLIC_POCKETBASE);
 
         let options = {expand: 'skins'};
 

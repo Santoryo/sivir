@@ -1,6 +1,10 @@
-import { pb } from '$lib/pocketbase'
 import moment from 'moment';
+import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE } from '$env/static/public';
+
 export async function GET() {
+
+    const pb = new PocketBase(PUBLIC_POCKETBASE);
 
     let xml = `
     <?xml version="1.0" encoding="UTF-8" ?>
