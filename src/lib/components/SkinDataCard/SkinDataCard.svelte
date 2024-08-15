@@ -6,7 +6,7 @@
     export let saleInfo: SaleRotationItem;
 </script>
 
-<a href="/skin/{skin.skinName.replaceAll(" ", "-")}">
+<a href="/skin/{encodeURIComponent(skin.skinName.replaceAll(" ", "-"))}">
     {#if !skin.isBase && sale == false}
         <div class="frame" style="background-image: url('//wsrv.nl/?url={skin.tilePath}')">
             {#if skin.cost == 0}

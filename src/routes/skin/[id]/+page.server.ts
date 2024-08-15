@@ -15,7 +15,7 @@ async function init(skinID: string) {
     const pb = new PocketBase(PUBLIC_POCKETBASE);
 
     // if(skin.version.res.length > 0) skin.version.res.reverse();
-    const skin = await pb.collection('skins4').getFirstListItem(`skinId="${skinID}" || skinName="${skinID.toString().replace(/-/g, ' ')}"`);
+    const skin = await pb.collection('skins4').getFirstListItem(`skinId="${skinID}" || skinName?~"${skinID.toString().replace(/-/g, ' ')}"`);
     const mythicShopOccurances = await pb.collection('mythicshop').getFullList({filter: `skin.skinId="${skinID}" || skin.skinName="${skinID.toString().replace(/-/g, ' ')}"`});
     const saleOccurances = await pb.collection('saleRotationItems').getFullList({filter: `skin.skinId="${skinID}" || skin.skinName="${skinID.toString().replace(/-/g, ' ')}"`});
     const wishlistedOccurances = await pb.collection('skins').getFullList({filter: `skin.skinId="${skinID}" || skin.skinName="${skinID.toString().replace(/-/g, ' ')}"`, fields: "id"});
