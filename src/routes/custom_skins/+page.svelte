@@ -7,6 +7,7 @@ const skins = [
         "image": "https://i.pinimg.com/736x/f3/ef/73/f3ef73243eb6a57c179bf9a824112284.jpg",
         "video": "https://www.youtube.com/embed/QKsh4RqET3g?si=BM4PXqEhPSnLN2xo",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/Lucy Kai'Sa V1.0.0.fantome",
+        "description": "Changes Kai'Sa to Lucy Kushinada from the anime Cyberpunk Edgerunners<br> - New VFX <br> - New Model",
         "date": "8.15.2024"
     },
     {
@@ -14,13 +15,15 @@ const skins = [
         "image": "https://i.pinimg.com/originals/4e/6a/9a/4e6a9a24a23e104e726b9bc3bd88cdcc.jpg",
         "video": "https://www.youtube.com/embed/PT5DUUduOSk",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/Clorinde Samira V1.2.0 by lucy.fantome",
+        "description": "Changes Samira to Clorinde from Genshin Impact<br> - New VFX <br> - New Model <br> - New Voicelines",
         "date": "07.07.2024"
     },
     {
-        "name": "Kuku Shinobu Akali",
+        "name": "Kuki Shinobu Akali",
         "image": "https://i.pinimg.com/564x/bb/7a/8b/bb7a8bb67d5430f245c098e6aeab350d.jpg",
         "video": "https://www.youtube.com/embed/WMF2i6-CplQ",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/KukiShinobuAkali.fantome",
+        "description": "Changes Akali to Kuki Shinobu from Genshin Impact<br> - New Voicelines <br> - New Model",
         "date": "07.11.2024"
     },
     {
@@ -28,6 +31,7 @@ const skins = [
         "image": "https://pbs.twimg.com/media/ErX55VwVkAAe9_8.jpg",
         "video": "https://www.youtube.com/embed/r-CUGEWvK3o",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/AsheGanyu.fantome",
+        "description": "Changes Ashe to Ganyu from Genshin Impact<br> - New Model",
         "date": "07.08.2024"
     },
     
@@ -53,7 +57,7 @@ const modalStore = getModalStore();
             </span>
         </div> -->
         <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
-			<div class="card w-full md:w-[350px] mx-2 h-[470px] card-hover rounded-md overflow-hidden relative cursor-pointer">
+			<div class="card w-full md:w-[350px] mx-2 h-[490px] card-hover rounded-md overflow-hidden relative cursor-pointer">
 				<header>
 					<!-- <img src="" class="bg-black/50 w-full aspect-[16/9]" alt="Post" /> -->
                     <iframe class="w-full aspect-[16/9]" src="{skin.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -63,7 +67,7 @@ const modalStore = getModalStore();
 					<h3 class="h3 font-semibold" data-toc-ignore>{skin.name}</h3>
 					<article>
 						<p>
-							Reveal mystery discounts on skins & champions. See something you like? Be sure to pick it up before time runs out!
+							{@html skin.description}
 						</p>
 					</article>
 				</div>
