@@ -5,28 +5,28 @@ const skins = [
     {
         "name": "Lucy Kushinada Kai'Sa",
         "image": "https://i.pinimg.com/736x/f3/ef/73/f3ef73243eb6a57c179bf9a824112284.jpg",
-        "video": "https://youtu.be/QKsh4RqET3g?si=BM4PXqEhPSnLN2xo",
+        "video": "https://www.youtube.com/embed/QKsh4RqET3g?si=BM4PXqEhPSnLN2xo",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/Lucy Kai'Sa V1.0.0.fantome",
         "date": "8.15.2024"
     },
     {
         "name": "Clorinde Samira",
         "image": "https://i.pinimg.com/originals/4e/6a/9a/4e6a9a24a23e104e726b9bc3bd88cdcc.jpg",
-        "video": "https://www.youtube.com/watch?v=PT5DUUduOSk",
+        "video": "https://www.youtube.com/embed/PT5DUUduOSk",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/Clorinde Samira V1.2.0 by lucy.fantome",
         "date": "07.07.2024"
     },
     {
         "name": "Kuku Shinobu Akali",
         "image": "https://i.pinimg.com/564x/bb/7a/8b/bb7a8bb67d5430f245c098e6aeab350d.jpg",
-        "video": "https://youtu.be/WMF2i6-CplQ?si=47XsPUMCJ32Qh8fe",
+        "video": "https://www.youtube.com/embed/WMF2i6-CplQ",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/KukiShinobuAkali.fantome",
         "date": "07.11.2024"
     },
     {
         "name": "Ganyu Ashe",
         "image": "https://pbs.twimg.com/media/ErX55VwVkAAe9_8.jpg",
-        "video": "https://www.youtube.com/watch?v=r-CUGEWvK3o",
+        "video": "https://www.youtube.com/embed/r-CUGEWvK3o",
         "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/AsheGanyu.fantome",
         "date": "07.08.2024"
     },
