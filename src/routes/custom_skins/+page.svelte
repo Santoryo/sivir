@@ -1,6 +1,7 @@
 <script lang="ts">
     import { getModalStore } from '@skeletonlabs/skeleton';
     import moment from 'moment';
+    //xxd
 const skins = [
     {
         "name": "Lucy Kushinada Kai'Sa",
