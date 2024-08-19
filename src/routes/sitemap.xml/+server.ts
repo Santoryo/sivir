@@ -77,6 +77,11 @@ export async function GET() {
         <priority>0.1</priority>
     </url>
     <url>
+        <loc>https://sivir.gg/ads.txt</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    <url>
         <loc>https://sivir.gg/event-shop</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
