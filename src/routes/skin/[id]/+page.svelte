@@ -80,11 +80,9 @@
 	}
 
     const description = `${info.cost > 0 ? `Cost: ${info.cost} RP` : `Distribution: ${info.distribution}`} ${info.lore ? `- ${info.lore}` : ''}`;
-
-
 </script>
 
-<Meta titleSuffix={info.skinName} description={`Cost: ${info.cost} ${info.lore}`} image="//wsrv.nl/?url={info.tilePath}" keywords="{info.championName} skins, {info.set.length > 0 ? info.set[0] : ""}" />
+<Meta titleSuffix={info.skinName} description={`Cost: ${info.cost} ${info.lore}`} image="//wsrv.nl/?url={info.tilePath}" keywords="{info.skinName}, {info.championName} skins, {info.set.length > 0 ? info.set[0] : ""}" />
 
 <svelte:head>
     <meta property="article:published_time" content="{info.release}" />
@@ -97,9 +95,9 @@
 
 	<div class="text-3xl font-bold uppercase h-full w-[800px] pt-2 flex-wrap grow-0 break-all">
 		{#if info.rarity != 'NoRarity'}<div class="h-[30px] w-[30px] bg-cover inline-block bg-center" style="background-image: url('/lol/{info.rarity}.webp')"></div>{/if}
-		{info.skinName}
+		<h1>{info.skinName}</h1>
 
-		<div>
+		<h2>
 			{#if !info.isBase}
 				{#if info.rarity == 'Special'}
 					{#if info.distribution.includes('Mythic Essence')}
@@ -118,13 +116,13 @@
 					<div class="text-regular">{info.distribution}</div>
 				{/if}
 			{/if}
-		</div>
+		</h2>
 
 		<div class="text-xl italic font-semibold uppercase flex flex-col">
 			{#if info.skinId == 245056 || info.skinId == 202037 || info.skinId == 64052}
 				<span class="text-red-500 font-bold not-italic">Mythic Scam</span>
 			{/if}
-			<div class="not-italic">{moment(info.release).isValid() ? 'Release date: ' + moment(info.release).format('D MMM Y') : 'SKIN COMING SOON'}</div>
+			<h3 class="not-italic">{moment(info.release).isValid() ? 'Release date: ' + moment(info.release).format('D MMM Y') : 'SKIN COMING SOON'}</h3>
 			{#if info.chromas.length > 0}<div>
 					<div class="h-[15px] w-[15px] bg-cover inline-block bg-center shadow-lg" style="background-image: url('/lol/chromas.webp')"></div>
 					{info.chromas.length} chromas

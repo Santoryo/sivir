@@ -25,10 +25,10 @@
     <div class="p-10 flex flex-col items-left lg:items-left" id="container">
         <div class="text-4xl font-bold uppercase w-fit">
             <!-- {#if isCurrent} Current {:else} Past {/if}Mythic Shop -->
-             Current Mythic Shop
-            <div class="text-2xl font-semibold uppercase">
-                PATCH {skins[0].patch}
-            </div>
+             <h1>{skins[0].patch} Mythic Shop Rotation</h1>
+            <h2 class="text-xl font-semibold uppercase">
+                Mythic Shop rotation rotates every patch. This Mythic Rotation includes {skins.filter((o) => o.category == "SKIN").length} skins.
+            </h2>
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>
         <div class="flex flex-row">

@@ -21,10 +21,10 @@
     <div class="p-10 flex flex-col" id="container">
     
 
-        <div class="text-4xl font-bold uppercase w-fit" id="title">Current Sale Rotation
-            <div class="text-2xl font-semibold uppercase">
+        <div class="text-4xl font-bold uppercase w-fit" id="title"><h1>Current Sale Rotation</h1>
+            <h2 class="text-2xl font-semibold uppercase">
                 {moment(skins[0].startDate).format('MMM Do')} - {moment(skins[0].endDate).format('MMM Do')} <span id="endsIn">— Ends {moment(skins[0].endDate).fromNow()}</span>
-            </div>
+            </h2>
         </div>
         <div class="text-2xl font-bold uppercase h-4"></div>
         <div class="flex flex-row">

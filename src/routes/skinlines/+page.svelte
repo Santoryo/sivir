@@ -24,10 +24,10 @@ onDestroy(() => {unsubscribe});
 
     <div class="flex flex-row justify-between flex-wrap items-center gap-4">
 
-    <div class="text-4xl font-bold uppercase w-fit">Skinlines
-        <div class="text-2xl font-semibold uppercase">
+    <div class="text-4xl font-bold uppercase w-fit"><h1>Skinlines</h1>
+        <h2 class="text-2xl font-semibold uppercase">
             There are {data.champions.length} skinlines
-        </div>
+        </h2>
     </div>
 
         <input

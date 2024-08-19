@@ -22,10 +22,10 @@
 <div class="flex flex-col p-10">
 	<div class="flex flex-row flex-wrap items-center justify-between gap-4">
 		<div class="w-fit text-4xl font-bold uppercase">
-			Champions
-			<div class="text-2xl font-semibold uppercase">
-				There are {data.length} champions
-			</div>
+			<h1>Champions</h1>
+			<h2 class="text-2xl font-semibold uppercase">
+				There are {data.length} champions in League of Legends
+			</h2>
 		</div>
 
 		<input

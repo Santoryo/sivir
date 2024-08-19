@@ -35,10 +35,9 @@
 	<div class="p-10 flex flex-col">
 		<div class="flex flex-row justify-between flex-wrap items-center gap-4">
 			<div class="text-4xl font-bold uppercase w-fit">
-				{champion.name}
+				<h1>{champion.name}</h1>
 				<div class="text-2xl font-semibold uppercase">
-					{champion.title}
-					<br />
+					<h2>{champion.title}</h2>
 					last skin - {moment(champion.expand.skins[champion.expand.skins.length - 1].release).fromNow()}
 				</div>
 			</div>

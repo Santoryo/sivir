@@ -12,15 +12,30 @@ export const load: PageServerLoad = async ({ }) => {
     const newestSkins: SkinData[] = [];
     const upcomingSkins: SkinData[] = [];
 
+    console.log(fetchResult.items);
+
+    let newestItem;
+
     for(const skin of fetchResult.items)
     {
         if(skin.availability == "Upcoming")
         {
             upcomingSkins.push(skin);
         }
-        else if(skin.release == fetchResult.items[0].release)
+        else if(skin.release)
         {
-            newestSkins.push(skin);
+            if(newestSkins.length == 0)
+            {
+                newestSkins.push(skin);
+                newestItem = skin.release;
+            }
+            else
+            {
+                if(newestItem == skin.release)
+                {
+                    newestSkins.push(skin);
+                }
+            }
         }
     }
 

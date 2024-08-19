@@ -25,13 +25,16 @@
 </script>
 
 {#if event}
-	<Meta titleSuffix={event.eventName} description="{event.eventName} Event Shop" />
+
+	<Meta titleSuffix={event.eventName} description="{event.eventName} Event Shop. Event Shops are featured alongside periodic events that happen every few weeks. You can obtain a prestige skin, free orbs, Mythic Essence, skin borders and exclusive event chromas!" />
+	<meta property="article:published_time" content="{event.eventStartDate}">
+
 
 	<div class="p-10 mx-auto">
-		<div class="text-4xl font-bold uppercase">{event.eventName}</div>
-		<div class="text-2xl font-semibold uppercase">
+		<h1 class="text-4xl font-bold uppercase">{event.eventName}</h1>
+		<h2 class="text-2xl font-semibold uppercase">
 			{event.eventName} Event Shop
-		</div>
+		</h2>
 		<div class="text-2xl font-semibold uppercase">
 			{moment(event.eventStartDate).format("MMM Do")} - {moment(event.eventEndDate).format("MMM Do")} (Shop Closes {moment(event.shopEndDate).format("MMM Do")})
 		</div>

@@ -68,12 +68,12 @@
     <div class="flex flex-col w-full relative gap-2">
         <div class="w-full min-h-[200px] relative flex flex-row justify-between gap-4 flex-wrap items-center">
             <div class="w-[400px] h-full">
-                <div class="text-4xl font-bold uppercase w-fit">
+                <h1 class="text-4xl font-bold uppercase w-fit">
                     {battlepass.name}
-                </div>
-                <div class="text-2xl font-semibold uppercase">
+                </h1>
+                <h2 class="text-2xl font-semibold uppercase">
                     Ends on {moment(battlepass.endDate).format('MMMM Do')}
-                </div>
+                </h2>
                 <div class="text-2xl font-semibold uppercase">
                    ({moment(battlepass.endDate).fromNow()})
                 </div>

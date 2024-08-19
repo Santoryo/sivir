@@ -37,10 +37,8 @@ onMount(async () => {
 
 <div class="p-10 mx-auto">
 
-	<div class="text-3xl font-bold uppercase">Welcome to Sivir.GG!</div>
-	<div class="text-xl font-semibold w-full flex">
-		<div class="">Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.</div>
-	</div>
+	<h1 class="text-3xl font-bold uppercase">Sivir.GG</h1>
+	<h2 class="text-xl font-semibold w-full flex">Your ultimate League of Legends database for champion skins, chromas, icons and other cosmetics. Sivir.GG stores all of the skins, chromas, and icons in one place. We also provide you with the latest information on all events, skin sales and Mythic Shop rotations. We also have a dedicated section for Teamfight Tactics Treasure Realms and Battle Pass.</h2>
 	<div class="text-2xl font-bold uppercase h-4"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="flex flex-row shrink-0 flex-wrap gap-3 content-center items-center justify-center w-full">
@@ -53,7 +51,7 @@ onMount(async () => {
 		</div>
 		</div> -->
 
-		<div class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</div>
+		<h3 class="text-3xl font-bold w-full h-fit py-4 uppercase">CURRENT EVENTS</h3>
 
 
 		{#if yourShop && moment(yourShop.endTime).diff(moment()) > 0 }
@@ -109,7 +107,7 @@ onMount(async () => {
     
 </div>
 
-<div class="text-3xl font-bold w-full h-fit py-4 uppercase">NEWEST SKINS</div>
+<h3 class="text-3xl font-bold w-full h-fit py-4 uppercase">NEWEST SKINS</h3>
 <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
 	{#each data.newestSkins as skin}
 		<a href="/skin/{skin.skinId}"><SkinDataCard skin={skin} /></a>
@@ -117,7 +115,7 @@ onMount(async () => {
 </div>
 
 {#if data.upcomingSkins.length > 0}
-<div class="text-3xl font-bold w-full h-fit py-4 uppercase">UPCOMING SKINS</div>
+<h3 class="text-3xl font-bold w-full h-fit py-4 uppercase">UPCOMING SKINS</h3>
 <div class="flex flex-row gap-2 lg:gap-3 flex-wrap justify-center">
 	{#each data.upcomingSkins as skin}
 		<a href="/skin/{skin.skinId}"><SkinDataCard skin={skin} /></a>

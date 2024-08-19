@@ -10,7 +10,7 @@ export async function load({ }) {
 
     const refDate = data[0].startDate;
 
-    const treasureRealms: TreasureRealm[] = data.filter((item) => item.startDate === refDate);
+    const treasureRealms: TreasureRealm[] = data.filter((item) => new Date(item.endDate) >= Date.now());
 
     return {treasureRealms}
 
