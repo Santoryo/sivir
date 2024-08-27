@@ -34,6 +34,14 @@ const skins = [
         "description": "Changes Ashe to Ganyu from Genshin Impact<br> - New Model",
         "date": "07.08.2024"
     },
+    {
+        "name": "Mikasa Ackerman Camille",
+        "image": "https://avatarfiles.alphacoders.com/352/352954.png",
+        "video": "https://www.youtube.com/embed/1D18CHVC09M",
+        "download": "https://raw.githubusercontent.com/Santoryo/leagueskins/main/CamilleMikasa.fantome",
+        "description": "Changes Camille to Mikasa Ackerman from Attack on Titan<br> - New Model<br> - New VFX<br> - New Voicelines",
+        "date": "08.27.2024"
+    }
     
 ]
 
@@ -48,7 +56,7 @@ const modalStore = getModalStore();
 		You can download my League customs skins here!
 	</div>
 
-    <div class="w-full flex flex-row h-fit justify-center gap-4 mt-10">
+    <div class="w-full flex flex-row flex-wrap h-fit justify-center gap-4 mt-10">
         {#each skins.sort((a, b) => moment(b.date).diff(moment(a.date))) as skin}
         <!-- <div class="frame" style="background-image: url('//wsrv.nl/?url={skin.image}');">
             <span class="skincardinfo absolute bottom-0 text-center">
